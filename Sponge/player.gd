@@ -112,7 +112,6 @@ func _physics_process(delta):
 		)
 
 		if slope_direction.length() > 0.01:
-
 			slope_direction = slope_direction.normalized()
 
 			horizontal_velocity += (
