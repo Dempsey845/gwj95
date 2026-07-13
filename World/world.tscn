@@ -15,7 +15,11 @@ sky = SubResource("Sky_j8job")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
+shading_mode = 2
 albedo_color = Color(0.07654121, 0.514556, 0.019760754, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7nom"]
+shading_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_xrivr"]
 
@@ -40,6 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.05918, 26.242136, 2.981885
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=389678001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+material_override = SubResource("StandardMaterial3D_m7nom")
 mesh = SubResource("BoxMesh_xrivr")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1931662351]
