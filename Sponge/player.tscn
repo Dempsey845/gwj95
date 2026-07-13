@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://c7q4mptcd8em0"]
 
+[ext_resource type="Script" uid="uid://nycxmdf0ah6a" path="res://Sponge/player.gd" id="1_cxng6"]
 [ext_resource type="Texture2D" uid="uid://dpum5yg1f4gpx" path="res://Sponge/Model/Body.png" id="1_ntt8n"]
 [ext_resource type="Texture2D" uid="uid://bee5a0egmpwx3" path="res://Sponge/Model/Pupil.png" id="2_qoy8g"]
+[ext_resource type="Script" uid="uid://d23c330c1vhx7" path="res://Sponge/Camera/camera_controller.gd" id="3_qoy8g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7pl5"]
 resource_name = "Body"
@@ -671,7 +673,10 @@ _data = {
 &"Armature|Walk_Right": SubResource("Animation_53vnl")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+
 [node name="Player" type="CharacterBody3D" unique_id=1437856355]
+script = ExtResource("1_cxng6")
 
 [node name="Armature" type="Node3D" parent="." unique_id=115922181]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -682,7 +687,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.99998283, 0.0021112757, -0.0054642367, -0.005639318, 0.09450573, -0.99550825, -0.0015853915, 0.995522, 0.09451597, 0, 0, 0.004182656)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 0, 0.004182656)
-bones/0/rotation = Quaternion(0.70710444, -0.0018511013, 0.0018511014, 0.7071044)
+bones/0/rotation = Quaternion(0.7071069, -1.7462298e-10, -1.382432e-10, 0.7071067)
 bones/0/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/1/name = "root"
 bones/1/parent = 0
@@ -868,3 +873,15 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=711613544]
 libraries/ = SubResource("AnimationLibrary_17854")
 autoplay = &"Armature|Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1934824696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="CameraSpring" type="SpringArm3D" parent="." unique_id=986915011]
+collision_mask = 2
+spring_length = 4.0
+script = ExtResource("3_qoy8g")
+
+[node name="Camera3D" type="Camera3D" parent="CameraSpring" unique_id=607890186]
+current = true

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://j2b3l3a67coe"]
+
+[ext_resource type="PackedScene" uid="uid://c7q4mptcd8em0" path="res://Sponge/player.tscn" id="1_62w18"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_j8job"]
+sky_material = SubResource("ProceduralSkyMaterial_8a836")
+
+[sub_resource type="Environment" id="Environment_3f78f"]
+background_mode = 2
+sky = SubResource("Sky_j8job")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
+albedo_color = Color(0.07654121, 0.514556, 0.019760754, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xrivr"]
+
+[node name="World" type="Node3D" unique_id=896112896]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2133333482]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1737692359]
+environment = SubResource("Environment_3f78f")
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=306508084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_xrivr")
+use_collision = true
+collision_layer = 3
+size = Vector3(1000, 1, 1000)
+
+[node name="Player" parent="." unique_id=1437856355 instance=ExtResource("1_62w18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.05918, 26.242136, 2.9818854)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=389678001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+mesh = SubResource("BoxMesh_xrivr")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1931662351]
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=1104728024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, -1.4456458)
+polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 11.585095, 3.208593, 11.183339, -0.84914213)
+depth = 5.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=1268846051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, 7.554354)
+polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 78.757385, 25.378975, 78.211334, 0.042665184)
+depth = 5.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=268887564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.897705, 1.5761108, -4)
+size = Vector3(5.20459, 4.1522217, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1426734227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.68744, 12.6024475, 4.619545)
+size = Vector3(28.784058, 26.204895, 5)
