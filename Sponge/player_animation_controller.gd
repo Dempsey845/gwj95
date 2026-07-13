@@ -7,6 +7,7 @@ extends Node
 @export var jump_blend_speed : float = 10.0
 
 var state_machine_playback: AnimationNodeStateMachinePlayback
+var attack_state_machine_playback: AnimationNodeStateMachinePlayback
 
 var body: CharacterBody3D
 
@@ -17,6 +18,7 @@ func _ready() -> void:
 	body = get_parent()
 
 	state_machine_playback = animation_tree.get("parameters/StateMachine/playback")
+	attack_state_machine_playback = animation_tree.get("parameters/AttackStateMachine/playback")
 
 func _process(delta):
 	var input := Input.get_vector(
