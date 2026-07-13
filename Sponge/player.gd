@@ -20,11 +20,11 @@ extends CharacterBody3D
 @export var slope_friction: float = 8.0
 
 @export_category("Jump")
-@export var jump_force: float = 11.0
+@export var jump_force: float = 13.0
 @export var gravity: float = 28.0
 
 @export var jump_cut_multiplier: float = 0.5
-@export var jump_hold_gravity: float = 12.0
+@export var jump_hold_gravity: float = 20.0
 
 @export_category("Long Jump")
 @export var long_jump_force: float = 14.0

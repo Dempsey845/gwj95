@@ -44,6 +44,7 @@ mesh = SubResource("BoxMesh_xrivr")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1931662351]
 use_collision = true
+collision_layer = 3
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D" unique_id=1104728024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, -1.4456458)
