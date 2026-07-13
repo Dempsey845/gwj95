@@ -10,6 +10,10 @@ extends CharacterBody3D
 @export var ground_deceleration: float = 20.0
 @export var air_acceleration : float = 8.0
 
+@export_category("Crouch")
+@export var crouch_speed_multiplier: float = 0.7
+@export var crouch_acceleration_multiplier: float = 0.5
+
 @export_category("Slopes")
 @export var slope_acceleration: float = 18.0
 @export var slope_max_speed: float = 14.0
@@ -81,6 +85,17 @@ func _physics_process(delta):
 		"move_back"
 	)
 
+	# Crouching
+	var crouching = Input.is_action_pressed("crouch")
+	var current_max_speed = max_speed
+	var current_acceleration = ground_acceleration
+
+	var is_long_jump_input = (
+		is_on_floor()
+		and Input.is_action_pressed("crouch")
+		and jump_buffer > 0
+	)
+
 	# Camera Direction	
 	var cam_forward = spring_arm.global_transform.basis.z
 	var cam_right = spring_arm.global_transform.basis.x
@@ -102,6 +117,10 @@ func _physics_process(delta):
 		0,
 		velocity.z
 	)
+
+	if crouching and !is_long_jump_input and !is_long_jumping:
+		current_max_speed *= crouch_speed_multiplier
+		current_acceleration *= crouch_acceleration_multiplier
 
 	if is_on_floor():
 		var floor_normal = get_floor_normal()
@@ -125,7 +144,7 @@ func _physics_process(delta):
 
 			horizontal_velocity += (
 				direction *
-				ground_acceleration *
+				current_acceleration *
 				delta
 			)
 		else:
@@ -135,14 +154,13 @@ func _physics_process(delta):
 				slope_friction * delta
 			)
 
-		var current_max_speed = max_speed
-
 		if slope_direction.y < -0.1:
-
 			current_max_speed = slope_max_speed
 
-		if horizontal_velocity.length() > current_max_speed:
+			# if crouching:
+			# 	current_max_speed *= crouch_speed_multiplier
 
+		if horizontal_velocity.length() > current_max_speed:
 			horizontal_velocity = (
 				horizontal_velocity.normalized()
 				* current_max_speed
@@ -156,11 +174,11 @@ func _physics_process(delta):
 				air_acceleration *
 				delta
 			)
-		if horizontal_velocity.length() > max_speed:
+		if horizontal_velocity.length() > current_max_speed:
 
 			horizontal_velocity = (
 				horizontal_velocity.normalized()
-				* max_speed
+				* current_max_speed
 			)
 
 	velocity.x = horizontal_velocity.x
@@ -197,11 +215,8 @@ func _physics_process(delta):
 			# Keep current direction if moving
 			# Otherwise use facing direction
 			if current_speed > 0.1:
-
 				current_velocity = current_velocity.normalized()
-
 			else:
-
 				current_velocity = forward
 
 			# Add bonus based on current speed
