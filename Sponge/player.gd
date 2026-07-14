@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var max_speed : float = 10.0
 
 @export var ground_acceleration: float = 35.0
-@export var ground_deceleration: float = 20.0
+@export var ground_deceleration: float = 35.0
 @export var air_acceleration : float = 8.0
 
 @export_category("Crouch")
@@ -52,6 +52,7 @@ extends CharacterBody3D
 var jump_buffer: float = 0.0
 var coyote_timer: float = 0.0
 
+var jumps_used: int = 0
 var is_jumping: bool = false
 var is_skidding: bool = false
 var is_long_jumping: bool = false
@@ -63,18 +64,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer = jump_buffer_time
 
-
 	if jump_buffer > 0:
 		jump_buffer -= delta
 
 	# Coyote Time	
 	if is_on_floor():
-
 		coyote_timer = coyote_time
 		is_long_jumping = false
-
+		jumps_used = 0
 	else:
-
 		coyote_timer -= delta
 
 	# Input	
@@ -141,18 +139,22 @@ func _physics_process(delta):
 
 		# Input acceleration
 		if direction != Vector3.ZERO:
-
 			horizontal_velocity += (
 				direction *
 				current_acceleration *
 				delta
 			)
 		else:
-
-			horizontal_velocity = horizontal_velocity.move_toward(
-				Vector3.ZERO,
-				slope_friction * delta
-			)
+			if slope_direction.length() > 0.01:
+				horizontal_velocity = horizontal_velocity.move_toward(
+					Vector3.ZERO,
+					slope_friction * delta
+				)
+			else:
+				horizontal_velocity = horizontal_velocity.move_toward(
+					Vector3.ZERO,
+					ground_deceleration * delta
+				)
 
 		if slope_direction.y < -0.1:
 			current_max_speed = slope_max_speed
@@ -248,6 +250,13 @@ func _physics_process(delta):
 			jump_buffer = 0
 			coyote_timer = 0
 
+			jumps_used = 1
+			is_jumping = true
+		elif not is_on_floor() and jumps_used < 2:
+			velocity.y = 0
+			velocity.y = jump_force
+			jumps_used += 1
+			jump_buffer = 0
 			is_jumping = true
 	
 	# Variable Jump Height	

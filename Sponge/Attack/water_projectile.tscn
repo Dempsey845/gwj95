@@ -38,7 +38,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.1, 0.1, 0.1)]
+"values": [Vector3(0.5, 0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_oyrx3"]
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1)]
+"values": [Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -106,7 +106,7 @@ collision_mask = 16
 script = ExtResource("1_vgoug")
 
 [node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=109588611]
-transform = Transform3D(0.1, -1.1641531e-08, -9.701269e-10, 1.1641531e-08, 0.1, -7.761022e-09, 9.701278e-10, 7.761022e-09, 0.1, 0.000112086535, 0.0015213831, -4.787417e-05)
+transform = Transform3D(0.5, -5.8207657e-08, -4.850634e-09, 5.8207657e-08, 0.5, -3.880511e-08, 4.8506386e-09, 3.880511e-08, 0.5, 0.000112086535, 0.0015213831, -4.787417e-05)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_7nm3e")
 
