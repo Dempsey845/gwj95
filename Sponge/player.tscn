@@ -1030,8 +1030,9 @@ script = ExtResource("3_a5twe")
 hand_water_meshes = [NodePath("../Armature/Skeleton3D/LeftHandAttachment/HandWaterMesh"), NodePath("../Armature/Skeleton3D/RightHandAttachment/HandWaterMesh")]
 water_level = NodePath("../PlayerWaterLevel")
 
-[node name="PlayerShieldController" type="Node" parent="." unique_id=1063101798]
+[node name="PlayerShieldController" type="Node" parent="." unique_id=1063101798 node_paths=PackedStringArray("water_level")]
 script = ExtResource("4_qv4xy")
+water_level = NodePath("../PlayerWaterLevel")
 
 [node name="ShieldCooldownTimer" type="Timer" parent="PlayerShieldController" unique_id=591241870]
 wait_time = 2.0
@@ -1319,7 +1320,7 @@ offset_top = 4.0
 offset_right = 209.0
 offset_bottom = 36.0
 max_value = 1.0
-step = 0.1
+step = 0.01
 value = 0.5
 texture_under = ExtResource("22_lrxf3")
 texture_progress = ExtResource("22_fdo6m")
