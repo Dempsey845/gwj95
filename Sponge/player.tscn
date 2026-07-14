@@ -20,6 +20,8 @@
 [ext_resource type="Animation" uid="uid://6fdq3vmq0r2s" path="res://Sponge/Animations/attack/start_charge.anim" id="13_vsphe"]
 [ext_resource type="Script" uid="uid://b510eu0vm4kf2" path="res://Sponge/Attack/shield_mesh.gd" id="17_vsphe"]
 [ext_resource type="Script" uid="uid://ygglympj550q" path="res://Component/hurtbox.gd" id="19_4eguh"]
+[ext_resource type="Script" uid="uid://23pkm152iacf" path="res://Sponge/water_progress_bar.gd" id="21_37sgm"]
+[ext_resource type="Texture2D" uid="uid://dwf06s8fpfvo8" path="res://Sponge/sponge_bar.png" id="22_lrxf3"]
 
 [sub_resource type="Animation" id="Animation_17fua"]
 resource_name = "Armature|Idle"
@@ -1016,6 +1018,22 @@ rings = 6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
+[sub_resource type="Gradient" id="Gradient_fdo6m"]
+colors = PackedColorArray(0, 0.14118892, 0.99999803, 1, 0.78431374, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lrxf3"]
+frequency = 0.0009
+fractal_octaves = 4
+fractal_lacunarity = 2.115
+fractal_gain = 1.64
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ymsqj"]
+width = 200
+height = 32
+noise = SubResource("FastNoiseLite_lrxf3")
+color_ramp = SubResource("Gradient_fdo6m")
+
 [node name="Player" type="CharacterBody3D" unique_id=1437856355]
 script = ExtResource("1_cxng6")
 
@@ -1306,3 +1324,20 @@ transform = Transform3D(0.010000001, 0, 0, 0, -1.1920932e-09, -0.010000002, 0, 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1934824696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=63578323]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1013747697 node_paths=PackedStringArray("water_level")]
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 209.0
+offset_bottom = 36.0
+max_value = 1.0
+step = 0.1
+value = 0.5
+texture_under = ExtResource("22_lrxf3")
+texture_progress = SubResource("NoiseTexture2D_ymsqj")
+tint_under = Color(0.73300546, 0.7330054, 0.7330054, 1)
+tint_progress = Color(0.8235294, 0.8235294, 0.8235294, 0.49019608)
+script = ExtResource("21_37sgm")
+water_level = NodePath("../../PlayerWaterLevel")
