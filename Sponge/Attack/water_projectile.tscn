@@ -97,6 +97,9 @@ _data = {
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
+radius = 1.5
+
 [node name="WaterProjectile" type="Area3D" unique_id=2019229824]
 script = ExtResource("1_vgoug")
 
@@ -117,3 +120,9 @@ shape = SubResource("SphereShape3D_xrivr")
 unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
+
+[node name="SplashZone" type="Area3D" parent="." unique_id=588836491]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SplashZone" unique_id=1428110128]
+shape = SubResource("SphereShape3D_13qdw")
+debug_color = Color(0.24318188, 0.5163623, 0.97210807, 0.41960785)
