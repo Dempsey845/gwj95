@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://j2b3l3a67coe"]
 
 [ext_resource type="PackedScene" uid="uid://c7q4mptcd8em0" path="res://Sponge/player.tscn" id="1_62w18"]
+[ext_resource type="Script" uid="uid://d2hgeisl3setm" path="res://World/world.gd" id="1_eidgh"]
 [ext_resource type="Script" uid="uid://dg2vhemr76cur" path="res://World/sub_viewport.gd" id="1_k8do8"]
-[ext_resource type="PackedScene" uid="uid://c8khf21nsf74x" path="res://Enemy/enemy.tscn" id="2_8a836"]
 [ext_resource type="Texture2D" uid="uid://2y6cymbs8obu" path="res://Sponge/circle.png" id="3_3f78f"]
 [ext_resource type="Shader" uid="uid://b7ynixxu2wdfe" path="res://Sponge/sponge_progress.gdshader" id="4_k8do8"]
+[ext_resource type="PackedScene" uid="uid://vv4hsig1a753" path="res://Enemy/Urchin/urchin.tscn" id="4_yf0ba"]
 [ext_resource type="Script" uid="uid://mi5ipuwdhf3u" path="res://Sponge/water_level_progress.gd" id="6_bkhv4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
@@ -48,6 +49,7 @@ shader_parameter/wave_frequency = 8.0
 shader_parameter/bubble_count = 10
 
 [node name="World" type="Node3D" unique_id=896112896]
+script = ExtResource("1_eidgh")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1204420788]
 texture_filter = 1
@@ -58,62 +60,62 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2058946509]
+[node name="MainViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2058946509]
+unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(320, 240)
 render_target_update_mode = 4
 script = ExtResource("1_k8do8")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=2133333482]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/MainViewport" unique_id=2133333482]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1737692359]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/MainViewport" unique_id=1737692359]
 environment = SubResource("Environment_3f78f")
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1437856355 instance=ExtResource("1_62w18")]
+[node name="Player" parent="SubViewportContainer/MainViewport" unique_id=1437856355 instance=ExtResource("1_62w18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.664507)
 
-[node name="Enemy" parent="SubViewportContainer/SubViewport" unique_id=23977337 node_paths=PackedStringArray("player") instance=ExtResource("2_8a836")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00672926, 0)
-player = NodePath("../Player")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport" unique_id=1261396565]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/MainViewport" unique_id=1261396565]
 navigation_mesh = SubResource("NavigationMesh_xrivr")
 
-[node name="Ground" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=306508084]
+[node name="Ground" type="CSGBox3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=306508084]
 material_override = SubResource("StandardMaterial3D_xrivr")
 use_collision = true
 collision_layer = 3
 size = Vector3(1000, 0.1, 1000)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=389678001]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=389678001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 material_override = SubResource("StandardMaterial3D_m7nom")
 mesh = SubResource("BoxMesh_xrivr")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=1931662351]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1931662351]
 use_collision = true
 collision_layer = 3
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1104728024]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1104728024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, -1.4456458)
 polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 11.585095, 3.208593, 11.183339, -0.84914213)
 depth = 5.0
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1268846051]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1268846051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, 7.554354)
 polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 78.757385, 25.378975, 78.211334, 0.042665184)
 depth = 5.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=268887564]
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/CSGCombiner3D" unique_id=268887564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.897705, 1.5761108, -4)
 size = Vector3(5.20459, 4.1522217, 5)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1426734227]
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1426734227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.68744, 12.6024475, 4.619545)
 size = Vector3(28.784058, 26.204895, 5)
+
+[node name="Urchin" parent="SubViewportContainer/MainViewport" unique_id=1632820619 instance=ExtResource("4_yf0ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=534787093]
 
@@ -133,4 +135,4 @@ layout_mode = 0
 offset_right = 41.0
 offset_bottom = 35.0
 script = ExtResource("6_bkhv4")
-player = NodePath("../../../SubViewportContainer/SubViewport/Player")
+player = NodePath("../../../SubViewportContainer/MainViewport/Player")

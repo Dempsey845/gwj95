@@ -727,6 +727,8 @@ material = SubResource("ShaderMaterial_4eguh")
 radial_segments = 12
 rings = 6
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2xayq"]
 resource_name = "Body"
 render_priority = 0
@@ -1075,6 +1077,23 @@ mesh = SubResource("SphereMesh_ed57x")
 script = ExtResource("17_vsphe")
 wobble_amount = 0.4
 wobble_speed = 2.5
+
+[node name="Hurtbox" type="Area3D" parent="ShieldMesh" unique_id=657037385 node_paths=PackedStringArray("health")]
+collision_layer = 0
+collision_mask = 32
+monitoring = false
+monitorable = false
+script = ExtResource("19_4eguh")
+health = NodePath("ShieldHealth")
+metadata/_custom_type_script = "uid://ygglympj550q"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShieldMesh/Hurtbox" unique_id=718149504]
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="ShieldHealth" type="Node" parent="ShieldMesh/Hurtbox" unique_id=1788012931]
+script = ExtResource("6_ed57x")
+max_health = 1000
+metadata/_custom_type_script = "uid://duxvtpogpenj5"
 
 [node name="CameraSpring" type="SpringArm3D" parent="." unique_id=986915011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

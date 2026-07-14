@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://pfb47bcyaeh3"]
+
+[ext_resource type="PackedScene" uid="uid://b5t4xbdfd64fv" path="res://Enemy/enemy_projectile.tscn" id="1_oig2b"]
+[ext_resource type="PackedScene" uid="uid://oe3gkcmwk3cx" path="res://Enemy/Urchin/Spike.fbx" id="2_oln7y"]
+[ext_resource type="Texture2D" uid="uid://dyw8u53dudhck" path="res://Enemy/Urchin/Warning.png" id="3_clbsn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oln7y"]
+radius = 0.25
+
+[sub_resource type="Animation" id="Animation_oln7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:move")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_clbsn"]
+resource_name = "enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:move")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ux6iy"]
+_data = {
+&"RESET": SubResource("Animation_oln7y"),
+&"enter": SubResource("Animation_clbsn")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0.15294118, 1)
+albedo_texture = ExtResource("3_clbsn")
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xrivr"]
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[node name="Spike" unique_id=1830240741 instance=ExtResource("1_oig2b")]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+move = false
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1340220820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017123207, -0.20386145)
+shape = SubResource("SphereShape3D_oln7y")
+
+[node name="Pivot" type="Node3D" parent="." index="2" unique_id=209488722]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.00042960793, 0)
+
+[node name="Spike" parent="Pivot" index="0" unique_id=523821863 instance=ExtResource("2_oln7y")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.013124615, -0.057809748)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=1236686571]
+libraries/ = SubResource("AnimationLibrary_ux6iy")
+autoplay = &"enter"
+
+[node name="Warning" type="MeshInstance3D" parent="." index="4" unique_id=750804686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34226042, 0)
+material_override = SubResource("StandardMaterial3D_13qdw")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_xrivr")

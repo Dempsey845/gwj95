@@ -4,7 +4,6 @@ extends Hitbox
 @onready var splash_zone: Area3D = $SplashZone
 
 var move_speed: float = 25.0
-var damage: int = 1
 var use_splash_zone: bool
 
 func _ready() -> void:

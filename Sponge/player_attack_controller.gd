@@ -95,7 +95,7 @@ func shoot_water_projectile(scale: float = 1.0, apply_splash_damage: bool = true
 	water_projectile.scale = Vector3.ONE * scale
 	water_projectile.use_splash_zone = apply_splash_damage
 	water_projectile.damage = damage
-	get_tree().current_scene.add_child(water_projectile)
+	get_tree().current_scene.main_viewport.add_child(water_projectile)
 
 func set_upper_body_blend(amount: float, callback: Callable, time: float = 0.25):
 	if blend_tween:

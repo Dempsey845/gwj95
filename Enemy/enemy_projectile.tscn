@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b5t4xbdfd64fv"]
+
+[ext_resource type="Script" uid="uid://cyhf1e1b3i4r8" path="res://Enemy/enemy_projectile.gd" id="1_qhog7"]
+
+[node name="EnemyProjectile" type="Area3D" unique_id=1830240741]
+script = ExtResource("1_qhog7")
+metadata/_custom_type_script = "uid://bnobrnrsesxva"
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=200830043]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1340220820]

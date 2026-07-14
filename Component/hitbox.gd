@@ -6,6 +6,7 @@ signal hit_hurtbox(hurtbox: Hurtbox)
 
 @export var active: bool = true
 @export var free_on_hit: bool = true
+@export var damage: int = 1
 
 func _ready() -> void:
     area_entered.connect(_on_area_entered)
@@ -15,7 +16,7 @@ func _on_area_entered(other: Area3D):
         return
 
     if other is Hurtbox:
-        other.register_hit()
+        other.register_hit(damage)
         hit_hurtbox.emit(other)
         hit_hurtbox_extend(other)
     
@@ -30,6 +31,5 @@ func check_for_hurtbox():
     active = true
     var areas = get_overlapping_areas()
     for area in areas:
-        print(area)
         _on_area_entered(area)
     active = false

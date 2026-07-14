@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://vv4hsig1a753"]
+
+[ext_resource type="Script" uid="uid://ygglympj550q" path="res://Component/hurtbox.gd" id="1_f45e7"]
+[ext_resource type="PackedScene" uid="uid://6pej4l1ghwws" path="res://Enemy/Urchin/Urchin.fbx" id="2_31nua"]
+[ext_resource type="Script" uid="uid://b8kjg4sckny0a" path="res://Enemy/Urchin/urchin_agent.gd" id="2_uip6t"]
+[ext_resource type="Script" uid="uid://duxvtpogpenj5" path="res://Component/health.gd" id="3_31nua"]
+[ext_resource type="Script" uid="uid://bnobrnrsesxva" path="res://Component/hitbox.gd" id="4_vslkr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
+radius = 2.517505
+
+[node name="Urchin" type="Area3D" unique_id=1632820619 node_paths=PackedStringArray("health")]
+collision_layer = 0
+collision_mask = 16
+monitoring = false
+script = ExtResource("1_f45e7")
+health = NodePath("Health")
+metadata/_custom_type_script = "uid://ygglympj550q"
+
+[node name="UrchinAgent" type="Node" parent="." unique_id=1893318527]
+script = ExtResource("2_uip6t")
+
+[node name="SearchTimer" type="Timer" parent="UrchinAgent" unique_id=1677259630]
+wait_time = 2.0
+autostart = true
+
+[node name="Health" type="Node" parent="." unique_id=2055945653]
+script = ExtResource("3_31nua")
+max_health = 2
+metadata/_custom_type_script = "uid://duxvtpogpenj5"
+
+[node name="Model" parent="." unique_id=774987476 instance=ExtResource("2_31nua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=290068303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+visible = false
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1462211516]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("4_vslkr")
+free_on_hit = false
+metadata/_custom_type_script = "uid://bnobrnrsesxva"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1496373559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+visible = false
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="SpikePoints" type="Node3D" parent="." unique_id=911463279]
+
+[node name="Marker3D" type="Marker3D" parent="SpikePoints" unique_id=1923116843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66999996, -0.26999998)
+
+[node name="Marker3D2" type="Marker3D" parent="SpikePoints" unique_id=1357608164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54999995, -0.35999998)
+
+[node name="Marker3D3" type="Marker3D" parent="SpikePoints" unique_id=675955532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66999996, 0.26999992)
+
+[node name="Marker3D4" type="Marker3D" parent="SpikePoints" unique_id=331505229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5500001, 0.35999992)
+
+[node name="Marker3D5" type="Marker3D" parent="SpikePoints" unique_id=718215643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75999993, -0.15000004)
+
+[node name="Marker3D6" type="Marker3D" parent="SpikePoints" unique_id=376472223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32999998, 0.55, 0.13999997)
+
+[node name="Marker3D7" type="Marker3D" parent="SpikePoints" unique_id=1945149829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35999998, 0.55, -1.7881394e-08)
+
+[node name="Marker3D8" type="Marker3D" parent="SpikePoints" unique_id=1739036747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32999998, 0.54999995, -0.14)
+
+[node name="PlayerDetectionArea" type="Area3D" parent="." unique_id=888867591]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" unique_id=1401875734]
+shape = SubResource("SphereShape3D_13qdw")
