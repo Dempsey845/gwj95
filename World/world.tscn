@@ -19,6 +19,11 @@ background_mode = 2
 sky = SubResource("Sky_j8job")
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_xrivr"]
+vertices = PackedVector3Array(6.25, 0.46748787, 2, 8, 0.46748787, 2, 8, 0.46748787, -0.75, 6.25, 0.46748787, -0.75, 6.25, 0.46748787, -7, 8.25, 0.46748787, -7, 8.25, 0.46748787, -499.5, 6.25, 0.7174879, -1.75, 8, 1.2174878, -1.75, 8, 1.2174878, -6, 6.25, 0.7174879, -6, -499.5, 0.46748787, 6, -1, 0.46748787, 6, -0.75, 0.46748787, 5, 0.75, 0.46748787, 5, 6.25, 0.7174879, 2.75, -499.5, 0.46748787, -499.5, 25, 0.46748787, -7, 25, 0.46748787, -499.5, 26.75, 0.46748787, -0.75, 25.25, 0.46748787, -0.75, 25.5, 0.46748787, 2, 27.25, 0.46748787, -1.25, 87.75, 0.46748787, 2, 88, 0.46748787, 1.5, 27.25, 0.46748787, -6.75, 117.25, 0.46748787, 1.5, 117.25, 0.46748787, -499.5, 117.75, 0.46748787, 1.75, 117.75, 0.46748787, 3.25, 499.5, 0.46748787, 3, 499.5, 0.46748787, -499.5, 26, 3.9674878, -2, 26, 3.9674878, -6, 20.461548, 3.9674878, -1.9230652, 20.461548, 3.9674878, -6, 12.25, 0.46748787, -5.75, 12.25, 0.46748787, -2, 20.25, 0.46748787, -2, 20.25, 0.46748787, -5.75, 22, 0.46748787, -5.75, 22, 0.46748787, -2, 26, 0.46748787, -2, 26, 0.46748787, -5.75, 1.25, 0.46748787, 5.25, 1, 0.46748787, 7, 6.25, 0.7174879, 7.5, 116.75, 25.967487, 6.75, 88.5, 26.217487, 3, 75.23389, 22.217487, 2.9596863, 88.23389, 26.217487, 6.9435425, 116.75, 25.967487, 2.5, 88.75, 25.967487, 2.5, 89, 0.46748787, 2.75, 89, 0.46748787, 6.5, 116.5, 0.46748787, 6.5, 116.5, 0.46748787, 2.75, 117.75, 0.46748787, 6, 499.5, 0.46748787, 6.25, 11.5, 0.46748787, 3.25, 11.5, 0.46748787, 7, 84.75, 0.7174879, 7, 84.75, 0.7174879, 3.25, 0, 0.46748787, 499.5, 0, 0.46748787, 7.25, -1, 0.46748787, 7, -499.5, 0.46748787, 499.5, 117.5, 0.46748787, 7.75, 116.25, 0.46748787, 499.5, 499.5, 0.46748787, 499.5, 116, 0.46748787, 7.75, 6.25, 0.46748787, 8, 5.75, 0.46748787, 499.5, 88.5, 0.46748787, 7.75, 88.25, 0.46748787, 8.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(10, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(13, 12, 11), PackedInt32Array(0, 15, 14), PackedInt32Array(14, 13, 0), PackedInt32Array(0, 13, 3), PackedInt32Array(4, 13, 6), PackedInt32Array(6, 13, 11), PackedInt32Array(6, 11, 16), PackedInt32Array(7, 3, 13), PackedInt32Array(10, 7, 13), PackedInt32Array(4, 10, 13), PackedInt32Array(6, 18, 5), PackedInt32Array(5, 18, 17), PackedInt32Array(21, 20, 19), PackedInt32Array(19, 22, 21), PackedInt32Array(21, 22, 23), PackedInt32Array(23, 22, 24), PackedInt32Array(22, 25, 24), PackedInt32Array(24, 25, 26), PackedInt32Array(25, 17, 26), PackedInt32Array(26, 17, 18), PackedInt32Array(26, 18, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(28, 26, 30), PackedInt32Array(30, 26, 27), PackedInt32Array(30, 27, 31), PackedInt32Array(33, 32, 35), PackedInt32Array(35, 32, 34), PackedInt32Array(35, 34, 9), PackedInt32Array(9, 34, 8), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(2, 20, 1), PackedInt32Array(1, 20, 21), PackedInt32Array(46, 45, 44), PackedInt32Array(44, 14, 46), PackedInt32Array(46, 14, 15), PackedInt32Array(46, 15, 49), PackedInt32Array(46, 49, 50), PackedInt32Array(50, 49, 48), PackedInt32Array(50, 48, 47), PackedInt32Array(52, 51, 48), PackedInt32Array(48, 51, 47), PackedInt32Array(56, 55, 53), PackedInt32Array(53, 55, 54), PackedInt32Array(29, 30, 57), PackedInt32Array(57, 30, 58), PackedInt32Array(62, 61, 59), PackedInt32Array(59, 61, 60), PackedInt32Array(64, 63, 65), PackedInt32Array(65, 63, 66), PackedInt32Array(65, 66, 11), PackedInt32Array(11, 12, 65), PackedInt32Array(57, 58, 67), PackedInt32Array(67, 58, 69), PackedInt32Array(67, 69, 68), PackedInt32Array(68, 70, 67), PackedInt32Array(46, 71, 45), PackedInt32Array(45, 71, 64), PackedInt32Array(64, 71, 72), PackedInt32Array(64, 72, 63), PackedInt32Array(73, 70, 74), PackedInt32Array(74, 70, 68), PackedInt32Array(71, 74, 72), PackedInt32Array(72, 74, 68)]
+agent_height = 1.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
 shading_mode = 2
 albedo_color = Color(0.07654121, 0.514556, 0.019760754, 1)
@@ -54,6 +59,7 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2058946509]
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(320, 240)
 render_target_update_mode = 4
@@ -66,45 +72,48 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1737692359]
 environment = SubResource("Environment_3f78f")
 
-[node name="Ground" type="CSGBox3D" parent="SubViewportContainer/SubViewport" unique_id=306508084]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-material_override = SubResource("StandardMaterial3D_xrivr")
-use_collision = true
-collision_layer = 3
-size = Vector3(1000, 1, 1000)
-
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=1437856355 instance=ExtResource("1_62w18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.664507)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=389678001]
+[node name="Enemy" parent="SubViewportContainer/SubViewport" unique_id=23977337 node_paths=PackedStringArray("player") instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00672926, 0)
+player = NodePath("../Player")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport" unique_id=1261396565]
+navigation_mesh = SubResource("NavigationMesh_xrivr")
+
+[node name="Ground" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=306508084]
+material_override = SubResource("StandardMaterial3D_xrivr")
+use_collision = true
+collision_layer = 3
+size = Vector3(1000, 0.1, 1000)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=389678001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 material_override = SubResource("StandardMaterial3D_m7nom")
 mesh = SubResource("BoxMesh_xrivr")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/SubViewport" unique_id=1931662351]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=1931662351]
 use_collision = true
 collision_layer = 3
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=1104728024]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1104728024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, -1.4456458)
 polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 11.585095, 3.208593, 11.183339, -0.84914213)
 depth = 5.0
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=1268846051]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1268846051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.724369, 0.4572444, 7.554354)
 polygon = PackedVector2Array(-6.353307, -0.9897565, 0.01452446, 0.8984964, 78.757385, 25.378975, 78.211334, 0.042665184)
 depth = 5.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=268887564]
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=268887564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.897705, 1.5761108, -4)
 size = Vector3(5.20459, 4.1522217, 5)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=1426734227]
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D/CSGCombiner3D" unique_id=1426734227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.68744, 12.6024475, 4.619545)
 size = Vector3(28.784058, 26.204895, 5)
-
-[node name="Enemy" parent="SubViewportContainer/SubViewport" unique_id=23977337 instance=ExtResource("2_8a836")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40505803, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=534787093]
 

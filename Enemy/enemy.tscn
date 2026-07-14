@@ -19,8 +19,9 @@ script = ExtResource("1_am0pq")
 script = ExtResource("1_px1sc")
 metadata/_custom_type_script = "uid://duxvtpogpenj5"
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1463751948]
+
 [node name="Hurtbox" type="Area3D" parent="." unique_id=188526900 node_paths=PackedStringArray("health")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 16
 collision_mask = 0
 monitoring = false
@@ -33,9 +34,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2604673, 0)
 shape = SubResource("CapsuleShape3D_xrivr")
 debug_color = Color(0.961032, 1.4439225e-06, 0.51540667, 0.41960785)
 
-[node name="CrabVisual" parent="." unique_id=268855901 node_paths=PackedStringArray("crab_body") instance=ExtResource("4_eqilm")]
-crab_body = NodePath("..")
+[node name="CrabVisual" parent="." unique_id=268855901 node_paths=PackedStringArray("enemy") instance=ExtResource("4_eqilm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.5, 0)
+enemy = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=475035002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CapsuleShape3D_13qdw")
