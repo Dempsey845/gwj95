@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://b510eu0vm4kf2" path="res://Sponge/Attack/shield_mesh.gd" id="17_vsphe"]
 [ext_resource type="Script" uid="uid://ygglympj550q" path="res://Component/hurtbox.gd" id="19_4eguh"]
 [ext_resource type="Script" uid="uid://23pkm152iacf" path="res://Sponge/water_progress_bar.gd" id="21_37sgm"]
+[ext_resource type="Texture2D" uid="uid://6qel0y5gm2jx" path="res://Assets/TinyTexturePack/Elements_15_200x32.png" id="22_fdo6m"]
 [ext_resource type="Texture2D" uid="uid://dwf06s8fpfvo8" path="res://Sponge/sponge_bar.png" id="22_lrxf3"]
 
 [sub_resource type="Animation" id="Animation_17fua"]
@@ -1018,31 +1019,16 @@ rings = 6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
-[sub_resource type="Gradient" id="Gradient_fdo6m"]
-colors = PackedColorArray(0, 0.14118892, 0.99999803, 1, 0.78431374, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lrxf3"]
-frequency = 0.0009
-fractal_octaves = 4
-fractal_lacunarity = 2.115
-fractal_gain = 1.64
-domain_warp_enabled = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ymsqj"]
-width = 200
-height = 32
-noise = SubResource("FastNoiseLite_lrxf3")
-color_ramp = SubResource("Gradient_fdo6m")
-
 [node name="Player" type="CharacterBody3D" unique_id=1437856355]
 script = ExtResource("1_cxng6")
 
 [node name="PlayerAnimationController" type="Node" parent="." unique_id=787263997]
 script = ExtResource("2_2s7eb")
 
-[node name="PlayerAttackController" type="Node" parent="." unique_id=716088516 node_paths=PackedStringArray("hand_water_meshes")]
+[node name="PlayerAttackController" type="Node" parent="." unique_id=716088516 node_paths=PackedStringArray("hand_water_meshes", "water_level")]
 script = ExtResource("3_a5twe")
 hand_water_meshes = [NodePath("../Armature/Skeleton3D/LeftHandAttachment/HandWaterMesh"), NodePath("../Armature/Skeleton3D/RightHandAttachment/HandWaterMesh")]
+water_level = NodePath("../PlayerWaterLevel")
 
 [node name="PlayerShieldController" type="Node" parent="." unique_id=1063101798]
 script = ExtResource("4_qv4xy")
@@ -1336,8 +1322,8 @@ max_value = 1.0
 step = 0.1
 value = 0.5
 texture_under = ExtResource("22_lrxf3")
-texture_progress = SubResource("NoiseTexture2D_ymsqj")
+texture_progress = ExtResource("22_fdo6m")
 tint_under = Color(0.73300546, 0.7330054, 0.7330054, 1)
-tint_progress = Color(0.8235294, 0.8235294, 0.8235294, 0.49019608)
+tint_progress = Color(0.43720886, 0.76847756, 0.9864766, 0.57254905)
 script = ExtResource("21_37sgm")
 water_level = NodePath("../../PlayerWaterLevel")

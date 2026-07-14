@@ -2,6 +2,7 @@ class_name PlayerAttackController
 extends Node
 
 @export var hand_water_meshes: Array[MeshInstance3D]
+@export var water_level: WaterLevel
 
 @onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
 @onready var fire_point: Marker3D = %FirePoint
@@ -14,6 +15,9 @@ var has_started_charge: bool
 
 const CHARGE_THRESHOLD: float = 0.2
 const MIN_CHARGE_TIME: float = 1.0
+
+const NORMAL_ATTACK_COST: float = 10.0
+const CHARGED_ATTACK_COST: float = 20.0
 
 var blend_tween: Tween
 var is_attacking: bool
@@ -38,15 +42,24 @@ func _process(delta: float) -> void:
 
 		if has_started_charge:
 			if charge_time > MIN_CHARGE_TIME:
-				end_charged_attack()
+				if water_level.current_water_level >= CHARGED_ATTACK_COST:
+					water_level.current_water_level -= CHARGED_ATTACK_COST
+					end_charged_attack()
+				else:
+					fail_charge_attack()
 			else:
-				set_hand_water_transparency(1.0, 0.5)
-				set_upper_body_blend(0.0, func():
-					is_attacking = false
-				, 0.5)
+				fail_charge_attack()
 		else:
-			normal_attack()
+			if water_level.current_water_level >= NORMAL_ATTACK_COST:
+				water_level.current_water_level -= NORMAL_ATTACK_COST
+				normal_attack()
 		
+func fail_charge_attack():
+	set_hand_water_transparency(1.0, 0.5)
+	set_upper_body_blend(0.0, func():
+		is_attacking = false
+	, 0.5)
+
 func start_charged_attack():
 	set_upper_body_blend(1.0, Callable())
 	set_hand_water_transparency(0.0, 1.0)
