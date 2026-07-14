@@ -1,7 +1,7 @@
 class_name Hurtbox
 extends Area3D
 
+@export var health: Health
+
 func register_hit(damage: int = 1):
-    # TODO: Take damage from health component
-    print("Damage taken!")
-    pass
+    health.take_damage(damage)
