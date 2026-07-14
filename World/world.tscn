@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://j2b3l3a67coe"]
 
 [ext_resource type="PackedScene" uid="uid://c7q4mptcd8em0" path="res://Sponge/player.tscn" id="1_62w18"]
-[ext_resource type="Script" uid="uid://ygglympj550q" path="res://Component/hurtbox.gd" id="2_8a836"]
+[ext_resource type="PackedScene" uid="uid://c8khf21nsf74x" path="res://Enemy/enemy.tscn" id="2_8a836"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,11 +23,6 @@ albedo_color = Color(0.07654121, 0.514556, 0.019760754, 1)
 shading_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_xrivr"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrivr"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
-radius = 0.6
 
 [node name="World" type="Node3D" unique_id=896112896]
 
@@ -75,39 +70,4 @@ size = Vector3(5.20459, 4.1522217, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.68744, 12.6024475, 4.619545)
 size = Vector3(28.784058, 26.204895, 5)
 
-[node name="Enemy" type="Node3D" parent="." unique_id=2077235827]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=858091682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49879515, 0)
-mesh = SubResource("CapsuleMesh_xrivr")
-
-[node name="Hurtbox" type="Area3D" parent="Enemy" unique_id=1703302155]
-collision_layer = 16
-collision_mask = 0
-monitoring = false
-script = ExtResource("2_8a836")
-metadata/_custom_type_script = "uid://ygglympj550q"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Hurtbox" unique_id=34432966]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5104673, 0)
-shape = SubResource("CapsuleShape3D_xrivr")
-debug_color = Color(0.961032, 1.4439225e-06, 0.51540667, 0.41960785)
-
-[node name="Enemy2" type="Node3D" parent="." unique_id=226835763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6017438, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy2" unique_id=498776416]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49879515, 0)
-mesh = SubResource("CapsuleMesh_xrivr")
-
-[node name="Hurtbox" type="Area3D" parent="Enemy2" unique_id=1876149831]
-collision_layer = 16
-collision_mask = 0
-monitoring = false
-script = ExtResource("2_8a836")
-metadata/_custom_type_script = "uid://ygglympj550q"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy2/Hurtbox" unique_id=386557853]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5104673, 0)
-shape = SubResource("CapsuleShape3D_xrivr")
-debug_color = Color(0.961032, 1.4439225e-06, 0.51540667, 0.41960785)
+[node name="Enemy" parent="." unique_id=23977337 instance=ExtResource("2_8a836")]
