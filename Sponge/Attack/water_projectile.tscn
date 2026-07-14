@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://csme2pndgnevr"]
+
+[ext_resource type="Script" uid="uid://bv52rlndxonhn" path="res://Sponge/Attack/water_projectile.gd" id="1_vgoug"]
+[ext_resource type="Texture2D" uid="uid://dkndl8l6v5x68" path="res://Assets/TinyTexturePack/Elements_15-128x128.png" id="2_tsn7t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.49803922)
+albedo_texture = ExtResource("2_tsn7t")
+
+[sub_resource type="SphereMesh" id="SphereMesh_7nm3e"]
+material = SubResource("StandardMaterial3D_13qdw")
+radial_segments = 12
+rings = 6
+
+[sub_resource type="Animation" id="Animation_aroxj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaterMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.761022e-08, -9.701268e-09, 1.16415315e-07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaterMesh:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_oyrx3"]
+resource_name = "enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaterMesh:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaterMesh/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"spin", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b0k8u"]
+resource_name = "spin"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaterMesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(7.761022e-08, -9.701268e-09, 1.16415315e-07), Vector3(6.2831855, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hi52i"]
+_data = {
+&"RESET": SubResource("Animation_aroxj"),
+&"enter": SubResource("Animation_oyrx3"),
+&"spin": SubResource("Animation_b0k8u")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+
+[node name="WaterProjectile" type="Area3D" unique_id=2019229824]
+script = ExtResource("1_vgoug")
+
+[node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=109588611]
+transform = Transform3D(0.1, -1.1641531e-08, -9.701269e-10, 1.1641531e-08, 0.1, -7.761022e-09, 9.701278e-10, 7.761022e-09, 0.1, 0.000112086535, 0.0015213831, -4.787417e-05)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_7nm3e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WaterMesh" unique_id=991082503]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_hi52i")
+autoplay = &"enter"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=317717215]
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1683612358]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true

@@ -1,8 +1,11 @@
 extends Node
 
-@onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
-
 @export var hand_water_meshes: Array[MeshInstance3D]
+
+@onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
+@onready var fire_point: Marker3D = %FirePoint
+
+var water_projectile_scene: PackedScene = preload("uid://csme2pndgnevr")
 
 var charge_time: float
 var is_charging: bool
@@ -27,7 +30,6 @@ func _process(delta: float) -> void:
 
 		if !has_started_charge and charge_time >= CHARGE_THRESHOLD:
 			has_started_charge = true
-			print("Charge started")
 			start_charged_attack()
 	
 	if Input.is_action_just_released("attack") and is_charging:
@@ -52,6 +54,7 @@ func start_charged_attack():
 func end_charged_attack():
 	set_hand_water_transparency(1.0, 0.5)
 	animation_controller.attack_state_machine_playback.travel("release_charge")
+	shoot_water_projectile()
 
 func end_charged_animation():
 	set_upper_body_blend(0.0, func():
@@ -63,10 +66,20 @@ func normal_attack():
 	animation_controller.attack_state_machine_playback.travel("shoot")
 	is_attacking = true
 
+	get_tree().create_timer(0.35).timeout.connect(func():
+		shoot_water_projectile(0.5)
+	)
+
 func start_end_attack():
 	set_upper_body_blend(0.0, func():
 		is_attacking = false
 	)
+
+func shoot_water_projectile(scale: float = 1.0):
+	var water_projectile: Area3D = water_projectile_scene.instantiate()
+	water_projectile.global_transform = fire_point.global_transform
+	water_projectile.scale = Vector3.ONE * scale
+	get_tree().current_scene.add_child(water_projectile)
 
 func set_upper_body_blend(amount: float, callback: Callable, time: float = 0.25):
 	if blend_tween:
