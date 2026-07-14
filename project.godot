@@ -71,6 +71,7 @@ shield={
 [layer_names]
 
 3d_physics/layer_5="EnemyHurtbox"
+3d_physics/layer_6="PlayerHurtbox"
 
 [physics]
 
