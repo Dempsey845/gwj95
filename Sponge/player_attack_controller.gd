@@ -1,3 +1,4 @@
+class_name PlayerAttackController
 extends Node
 
 @export var hand_water_meshes: Array[MeshInstance3D]
