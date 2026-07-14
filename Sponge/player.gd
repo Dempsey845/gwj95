@@ -48,6 +48,9 @@ extends CharacterBody3D
 
 @onready var spring_arm: SpringArm3D = $CameraSpring
 @onready var armature: Node3D = $Armature
+@onready var water_level: WaterLevel = $PlayerWaterLevel
+
+const DOUBLE_JUMP_COST: float = 5.0
 
 var jump_buffer: float = 0.0
 var coyote_timer: float = 0.0
@@ -252,7 +255,8 @@ func _physics_process(delta):
 
 			jumps_used = 1
 			is_jumping = true
-		elif not is_on_floor() and jumps_used < 2:
+		elif not is_on_floor() and jumps_used < 2 and water_level.current_water_level >= DOUBLE_JUMP_COST:
+			water_level.current_water_level -= DOUBLE_JUMP_COST
 			velocity.y = 0
 			velocity.y = jump_force
 			jumps_used += 1
