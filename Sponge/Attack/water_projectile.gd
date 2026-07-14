@@ -8,6 +8,7 @@ var move_speed: float = 25.0
 var use_splash_zone: bool
 
 func _ready() -> void:
+    super._ready()
     life_timer.timeout.connect(func():
         queue_free()
     )

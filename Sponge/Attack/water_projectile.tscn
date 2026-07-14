@@ -98,9 +98,11 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
-radius = 1.5
+radius = 2.5
 
 [node name="WaterProjectile" type="Area3D" unique_id=2019229824]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_vgoug")
 
 [node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=109588611]
@@ -122,6 +124,8 @@ wait_time = 3.0
 autostart = true
 
 [node name="SplashZone" type="Area3D" parent="." unique_id=588836491]
+collision_layer = 0
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SplashZone" unique_id=1428110128]
 shape = SubResource("SphereShape3D_13qdw")

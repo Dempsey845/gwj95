@@ -67,7 +67,7 @@ func normal_attack():
 	is_attacking = true
 
 	get_tree().create_timer(0.35).timeout.connect(func():
-		shoot_water_projectile(0.5)
+		shoot_water_projectile(0.5, false)
 	)
 
 func start_end_attack():
@@ -75,10 +75,11 @@ func start_end_attack():
 		is_attacking = false
 	)
 
-func shoot_water_projectile(scale: float = 1.0):
+func shoot_water_projectile(scale: float = 1.0, apply_splash_damage: bool = true):
 	var water_projectile: Area3D = water_projectile_scene.instantiate()
 	water_projectile.global_transform = fire_point.global_transform
 	water_projectile.scale = Vector3.ONE * scale
+	water_projectile.use_splash_zone = apply_splash_damage
 	get_tree().current_scene.add_child(water_projectile)
 
 func set_upper_body_blend(amount: float, callback: Callable, time: float = 0.25):
