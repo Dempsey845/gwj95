@@ -2,6 +2,8 @@ extends Node
 
 @onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
 
+@export var hand_water_meshes: Array[MeshInstance3D]
+
 var charge_time: float
 var is_charging: bool
 var has_started_charge: bool
@@ -11,6 +13,8 @@ const MIN_CHARGE_TIME: float = 1.0
 
 var blend_tween: Tween
 var is_attacking: bool
+
+var water_tween: Tween
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and !is_attacking:
@@ -23,6 +27,7 @@ func _process(delta: float) -> void:
 
 		if !has_started_charge and charge_time >= CHARGE_THRESHOLD:
 			has_started_charge = true
+			print("Charge started")
 			start_charged_attack()
 	
 	if Input.is_action_just_released("attack") and is_charging:
@@ -30,10 +35,9 @@ func _process(delta: float) -> void:
 
 		if has_started_charge:
 			if charge_time > MIN_CHARGE_TIME:
-				print("Charge attack!")
 				end_charged_attack()
 			else:
-				print("Charge attack failed!")
+				set_hand_water_transparency(1.0, 0.5)
 				set_upper_body_blend(0.0, func():
 					is_attacking = false
 				, 0.5)
@@ -42,9 +46,11 @@ func _process(delta: float) -> void:
 		
 func start_charged_attack():
 	set_upper_body_blend(1.0, Callable())
+	set_hand_water_transparency(0.0, 1.0)
 	animation_controller.attack_state_machine_playback.travel("start_charge")
 
 func end_charged_attack():
+	set_hand_water_transparency(1.0, 0.5)
 	animation_controller.attack_state_machine_playback.travel("release_charge")
 
 func end_charged_animation():
@@ -81,3 +87,16 @@ func set_upper_body_blend(amount: float, callback: Callable, time: float = 0.25)
 	)
 
 	blend_tween.tween_callback(callback)
+
+func set_hand_water_transparency(amount: float, time: float):
+	if water_tween:
+		water_tween.kill()
+	
+	water_tween = create_tween()
+	water_tween.tween_method(func(value):
+		for hand in hand_water_meshes:
+			hand.transparency = value,
+		hand_water_meshes[0].transparency,
+		amount,
+		time
+	)
