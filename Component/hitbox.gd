@@ -14,6 +14,7 @@ func _on_area_entered(other: Area3D):
         hit_hurtbox_extend(other)
     
     hit.emit()
+    queue_free.call_deferred()
 
 func hit_hurtbox_extend(hurtbox: Hurtbox):
     pass
