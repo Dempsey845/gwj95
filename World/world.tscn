@@ -71,3 +71,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.68744, 12.6024475, 4.6195
 size = Vector3(28.784058, 26.204895, 5)
 
 [node name="Enemy" parent="." unique_id=23977337 instance=ExtResource("2_8a836")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40505803, 0)

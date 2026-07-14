@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://chv46blv6kivx"]
+
+[ext_resource type="PackedScene" uid="uid://m15hxjln50mw" path="res://Enemy/Crab/Crab.fbx" id="1_b3u3v"]
+[ext_resource type="Script" uid="uid://ckuc8j5w3bdai" path="res://Enemy/Crab/crab_visual.gd" id="2_88ujm"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b3u3v"]
+animation = &"Armature|Attack"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_4l184"]
+filter_enabled = true
+filters = ["", "Armature/Skeleton3D:Bone.001", "Armature/Skeleton3D:arm.l", "Armature/Skeleton3D:hand.l", "Armature/Skeleton3D:hand.r", "Armature/Skeleton3D:root"]
+fadein_time = 0.2
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_88ujm"]
+animation = &"Armature|Idle"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_u5n0t"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rq8d1"]
+animation = &"Armature|Walk"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_13qdw"]
+graph_offset = Vector2(-689.3984, -51.420765)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_rq8d1")
+nodes/Walk/position = Vector2(-720, 180)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_88ujm")
+nodes/Idle/position = Vector2(-700, -40)
+nodes/Attack/node = SubResource("AnimationNodeAnimation_b3u3v")
+nodes/Attack/position = Vector2(-180, 100)
+nodes/AttackOneShot/node = SubResource("AnimationNodeOneShot_4l184")
+nodes/AttackOneShot/position = Vector2(40, -60)
+nodes/Speed/node = SubResource("AnimationNodeBlend2_u5n0t")
+nodes/Speed/position = Vector2(-380, -40)
+node_connections = [&"output", 0, &"AttackOneShot", &"AttackOneShot", 0, &"Speed", &"AttackOneShot", 1, &"Attack", &"Speed", 0, &"Idle", &"Speed", 1, &"Walk"]
+
+[node name="CrabVisual" unique_id=268855901 instance=ExtResource("1_b3u3v")]
+script = ExtResource("2_88ujm")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(391115578) index="0" unique_id=1532878778]
+bones/0/rotation = Quaternion(0.28177902, -0.00020448031, 0.0003101702, 0.9594793)
+bones/1/position = Vector3(-1.5260793e-13, 0.0023960029, 8.168292e-10)
+bones/1/rotation = Quaternion(0.6150654, -0.2745163, -0.21036945, 0.70857614)
+bones/1/scale = Vector3(1.0000001, 0.9999999, 0.9999998)
+bones/3/position = Vector3(-1.5260793e-13, 0.0023960029, 8.168292e-10)
+bones/3/rotation = Quaternion(0.5211954, 0.07474925, 0.80425346, -0.27557978)
+bones/3/scale = Vector3(0.9999994, 0.9999998, 0.99999994)
+bones/4/position = Vector3(-1.2497872e-10, 0.005946109, -3.1667396e-10)
+bones/4/rotation = Quaternion(-0.34758374, -0.22615737, 0.02173627, 0.90970653)
+bones/4/scale = Vector3(1, 1, 1.0000001)
+bones/6/position = Vector3(3.4046072e-06, 0.0023960005, 1.5679298e-14)
+bones/6/rotation = Quaternion(-0.52096707, 0.075179525, 0.80417097, 0.27613482)
+bones/6/scale = Vector3(0.9999994, 1, 1)
+bones/7/position = Vector3(6.260849e-10, 0.0059461095, -7.0489986e-10)
+bones/7/rotation = Quaternion(-0.3475459, 0.22610658, -0.02174723, 0.90973336)
+bones/7/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/8/rotation = Quaternion(3.7252899e-09, -3.7252894e-09, 0, 1)
+bones/8/scale = Vector3(1.0000002, 1.0000001, 1.0000001)
+bones/9/rotation = Quaternion(0.26541698, 0.74836683, -0.60783863, -0.005749005)
+bones/10/position = Vector3(6.9138634e-10, 0.0034796395, -3.1362565e-10)
+bones/10/rotation = Quaternion(0.12828764, -0.5420778, -0.10073528, 0.82434607)
+bones/12/rotation = Quaternion(0.36192936, -0.41808107, 0.6718906, -0.49272543)
+bones/13/position = Vector3(3.782546e-11, 0.0031069082, 1.5095167e-10)
+bones/13/rotation = Quaternion(0.054280832, -0.8094067, 0.019232824, 0.5844181)
+bones/13/scale = Vector3(1.0000001, 1, 0.99999994)
+bones/15/rotation = Quaternion(-0.26551494, 0.7480214, -0.60822326, 0.005489523)
+bones/16/position = Vector3(-6.9138634e-10, 0.0034796395, -3.1362565e-10)
+bones/16/rotation = Quaternion(0.12735264, 0.5421936, 0.100410014, 0.82445455)
+bones/18/rotation = Quaternion(-0.3618446, -0.41799456, 0.6719084, 0.4928369)
+bones/19/position = Vector3(-3.782546e-11, 0.0031069082, 1.5095167e-10)
+bones/19/rotation = Quaternion(0.054361254, 0.80936503, -0.01938204, 0.5844634)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=539030182]
+autoplay = &"Armature|Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=237893556]
+tree_root = SubResource("AnimationNodeBlendTree_13qdw")
+anim_player = NodePath("../AnimationPlayer")
+parameters/AttackOneShot/active = false
+parameters/AttackOneShot/internal_active = false
+parameters/AttackOneShot/request = 0
+parameters/Speed/blend_amount = 0.0
