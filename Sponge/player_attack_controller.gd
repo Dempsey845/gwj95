@@ -6,6 +6,7 @@ extends Node
 
 @onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
 @onready var fire_point: Marker3D = %FirePoint
+@onready var enemy_detection_area: Area3D = %EnemyDetectionArea
 
 var water_projectile_scene: PackedScene = preload("uid://csme2pndgnevr")
 
@@ -23,6 +24,11 @@ var blend_tween: Tween
 var is_attacking: bool
 
 var water_tween: Tween
+
+var default_fire_point_rotation: Vector3
+
+func _ready() -> void:
+	default_fire_point_rotation = fire_point.rotation
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and !is_attacking:
@@ -90,6 +96,21 @@ func start_end_attack():
 	)
 
 func shoot_water_projectile(scale: float = 1.0, apply_splash_damage: bool = true, damage: int = 2):
+	var overlapping_areas = enemy_detection_area.get_overlapping_areas()
+
+	fire_point.rotation = default_fire_point_rotation
+
+	if overlapping_areas.size() > 0:
+		var closest_area_distance_sq: float = INF
+		var closest_area: Area3D
+		var player: Player = get_parent()
+		for area in overlapping_areas:
+			if player.global_position.distance_squared_to(area.global_position) < closest_area_distance_sq:
+				closest_area = area
+		
+		if closest_area:
+			fire_point.look_at(closest_area.global_position + Vector3.UP, Vector3.UP, true)
+
 	var water_projectile: Area3D = water_projectile_scene.instantiate()
 	water_projectile.global_transform = fire_point.global_transform
 	water_projectile.scale = Vector3.ONE * scale

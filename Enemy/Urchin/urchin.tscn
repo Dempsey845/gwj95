@@ -7,13 +7,14 @@
 [ext_resource type="Script" uid="uid://bnobrnrsesxva" path="res://Component/hitbox.gd" id="4_vslkr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 0.3943904
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
 radius = 2.517505
 
 [node name="Urchin" type="Area3D" unique_id=1632820619 node_paths=PackedStringArray("health")]
-collision_layer = 0
-collision_mask = 16
+collision_layer = 16
+collision_mask = 0
 monitoring = false
 script = ExtResource("1_f45e7")
 health = NodePath("Health")
@@ -36,7 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=290068303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-visible = false
 shape = SubResource("SphereShape3D_xrivr")
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1462211516]
@@ -49,7 +49,6 @@ metadata/_custom_type_script = "uid://bnobrnrsesxva"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1496373559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-visible = false
 shape = SubResource("SphereShape3D_xrivr")
 
 [node name="SpikePoints" type="Node3D" parent="." unique_id=911463279]
