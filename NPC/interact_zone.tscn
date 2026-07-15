@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dhjnwa4ftvint"]
+
+[ext_resource type="Script" uid="uid://cfomh8d8eu8pq" path="res://NPC/interact_zone.gd" id="1_vsmam"]
+[ext_resource type="Texture2D" uid="uid://5qclrp5gvxa0" path="res://NPC/E-Icon.png" id="2_6lpma"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_6lpma")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xrivr"]
+size = Vector2(1, 1)
+orientation = 2
+
+[node name="InteractZone" type="Area3D" unique_id=460746300]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_vsmam")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1550915124]
+shape = SubResource("SphereShape3D_xrivr")
+debug_fill = false
+
+[node name="Icon" type="MeshInstance3D" parent="." unique_id=227017323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = SubResource("StandardMaterial3D_13qdw")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_xrivr")

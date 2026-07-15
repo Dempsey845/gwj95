@@ -27,7 +27,7 @@ func _run_dialogue(dialogue_ui: DialogueUI) -> void:
 
 		if node.event != "":
 			trigger_event(node.event)
-			
+
 		await dialogue_ui.user_advance
 
 		if node.next == -1:

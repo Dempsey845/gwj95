@@ -21,6 +21,7 @@ func open_dialogue(icon: CompressedTexture2D):
 	animation_player.play("open")
 
 func close_dialogue():
+	dialogue_label.text = ""
 	animation_player.play("close")
 
 func start_dialogue_text(text: String) -> void:

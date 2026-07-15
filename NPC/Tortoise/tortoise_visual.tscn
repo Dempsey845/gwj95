@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dodvn5hodddp1"]
+
+[ext_resource type="PackedScene" uid="uid://df0gklol08jj0" path="res://NPC/Tortoise/Tortoise.fbx" id="1_otm0k"]
+
+[node name="Tortoise" unique_id=646853677 instance=ExtResource("1_otm0k")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(606416181) index="0" unique_id=271668968]
+bones/0/rotation = Quaternion(0.51273465, 1.0234682e-07, 6.112273e-08, 0.8585472)
+bones/1/rotation = Quaternion(0.34379086, -1.3745098e-15, 8.196612e-08, 0.93904626)
+bones/2/rotation = Quaternion(0.18130212, 1.6035555e-14, 4.3225793e-08, 0.98342746)
+bones/4/rotation = Quaternion(0.1692599, -0.11629949, -0.8066264, 0.55423754)
+bones/5/rotation = Quaternion(0.22712526, 0.09784052, -0.038744416, 0.9681633)
+bones/6/rotation = Quaternion(0.24788426, 0.12554906, -0.021198044, 0.96038616)
+bones/11/rotation = Quaternion(0.007166113, 0.004923853, 0.8241624, 0.56628674)
+bones/12/rotation = Quaternion(0.0282271, 0.011619365, 0.5498201, 0.83472514)
+bones/13/rotation = Quaternion(-0.02551364, 0.012922254, 0.022058032, 0.99934757)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1943715562]
+autoplay = &"Armature|Idle"

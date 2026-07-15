@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://c5i6i7mlao60a"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_mjmwy"]
+[ext_resource type="Resource" uid="uid://c5pyng1lb2rmt" path="res://Systems/Dialogue/Tortoise/Waiting/waiting.tres" id="2_btxpu"]
+[ext_resource type="Script" uid="uid://bxw0dwgveah1w" path="res://Systems/Dialogue/dialogue.gd" id="2_jg4yw"]
+
+[resource]
+script = ExtResource("2_jg4yw")
+nodes = Array[ExtResource("1_mjmwy")]([ExtResource("2_btxpu")])
+metadata/_custom_type_script = "uid://bxw0dwgveah1w"
