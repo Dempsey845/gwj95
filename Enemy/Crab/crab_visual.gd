@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 
 func blend_move(target: float):
 	if move_tween:
-		move_tween.stop()
+		move_tween.kill()
 	
 	move_tween = create_tween()
 

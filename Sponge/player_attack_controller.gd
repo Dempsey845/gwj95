@@ -7,6 +7,8 @@ extends Node
 @onready var animation_controller: PlayerAnimationController = $"../PlayerAnimationController"
 @onready var fire_point: Marker3D = %FirePoint
 @onready var enemy_detection_area: Area3D = %EnemyDetectionArea
+@onready var targer_search_timer: Timer = $TargerSearchTimer
+@onready var target_billboard: TargetBillboard = $'../TargetBillboard'
 
 var water_projectile_scene: PackedScene = preload("uid://csme2pndgnevr")
 
@@ -29,6 +31,7 @@ var default_fire_point_rotation: Vector3
 
 func _ready() -> void:
 	default_fire_point_rotation = fire_point.rotation
+	targer_search_timer.timeout.connect(try_look_at_nearest_enemy)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and !is_attacking:
@@ -95,21 +98,41 @@ func start_end_attack():
 		is_attacking = false
 	)
 
-func shoot_water_projectile(scale: float = 1.0, apply_splash_damage: bool = true, damage: int = 2):
-	var overlapping_areas = enemy_detection_area.get_overlapping_areas()
-
+func try_look_at_nearest_enemy():
 	fire_point.rotation = default_fire_point_rotation
+
+	var overlapping_areas = enemy_detection_area.get_overlapping_areas()
 
 	if overlapping_areas.size() > 0:
 		var closest_area_distance_sq: float = INF
 		var closest_area: Area3D
 		var player: Player = get_parent()
+
 		for area in overlapping_areas:
-			if player.global_position.distance_squared_to(area.global_position) < closest_area_distance_sq:
+			var distance_sq_to_area = player.global_position.distance_squared_to(area.global_position)
+			if distance_sq_to_area < closest_area_distance_sq:
 				closest_area = area
+				closest_area_distance_sq = distance_sq_to_area
 		
-		if closest_area:
-			fire_point.look_at(closest_area.global_position + Vector3.UP, Vector3.UP, true)
+		var target_point = closest_area.global_position + Vector3.UP
+
+		if target_billboard.target_node == null:
+			target_billboard.global_position = target_point
+			target_billboard.fade_transparency(0.5)
+			target_billboard.pop_in()
+
+		target_billboard.target_node = closest_area
+		
+		fire_point.look_at(target_point, Vector3.UP, true)
+	else:
+		target_billboard.target_node = null
+		target_billboard.pop_out()
+		target_billboard.fade_transparency(1.0)
+			
+	
+
+func shoot_water_projectile(scale: float = 1.0, apply_splash_damage: bool = true, damage: int = 2):
+	try_look_at_nearest_enemy()
 
 	var water_projectile: Area3D = water_projectile_scene.instantiate()
 	water_projectile.global_transform = fire_point.global_transform

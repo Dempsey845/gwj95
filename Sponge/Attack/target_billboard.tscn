@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bfyrvud8fpl4a"]
+
+[ext_resource type="Texture2D" uid="uid://3supxrftpyy5" path="res://Sponge/Target.png" id="1_a4iet"]
+[ext_resource type="Script" uid="uid://cwipi7ues6mry" path="res://Sponge/Attack/target_billboard.gd" id="2_q1myw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1myw"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_a4iet")
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tkt0r"]
+size = Vector2(0.8, 0.8)
+orientation = 2
+
+[node name="TargetBillboard" type="MeshInstance3D" unique_id=839824412]
+top_level = true
+material_override = SubResource("StandardMaterial3D_q1myw")
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_tkt0r")
+script = ExtResource("2_q1myw")
