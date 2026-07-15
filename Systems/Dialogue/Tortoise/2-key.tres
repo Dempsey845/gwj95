@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://ydkyfakpm0v3"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="2_et6n4"]
+
+[resource]
+script = ExtResource("2_et6n4")
+text = "I see you are after the volcano shaft key."
+speaker = "Tortoise"
+next = 2
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

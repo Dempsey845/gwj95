@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://d1pglt1ai082l"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="2_ifpna"]
+
+[resource]
+script = ExtResource("2_ifpna")
+text = "I am willing to help you retrieve the key. But you must help me first!"
+speaker = "Tortoise"
+next = 4
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://wbbpvtnrknkn"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="2_n6x4m"]
+
+[resource]
+script = ExtResource("2_n6x4m")
+text = "Greetings, little sponge..."
+speaker = "Tortoise"
+next = 1
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

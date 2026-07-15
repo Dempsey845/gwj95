@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://u65njyf1hq7e"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_owpc7"]
+[ext_resource type="Resource" uid="uid://wbbpvtnrknkn" path="res://Systems/Dialogue/Tortoise/1-greetings.tres" id="2_hff2e"]
+[ext_resource type="Script" uid="uid://bxw0dwgveah1w" path="res://Systems/Dialogue/dialogue.gd" id="2_sydk6"]
+[ext_resource type="Resource" uid="uid://ydkyfakpm0v3" path="res://Systems/Dialogue/Tortoise/2-key.tres" id="3_pq24i"]
+[ext_resource type="Resource" uid="uid://ta4uysx726ux" path="res://Systems/Dialogue/Tortoise/3-story.tres" id="4_l4u5d"]
+[ext_resource type="Resource" uid="uid://d1pglt1ai082l" path="res://Systems/Dialogue/Tortoise/4-help.tres" id="5_fngj7"]
+[ext_resource type="Resource" uid="uid://bnf0puru0x673" path="res://Systems/Dialogue/Tortoise/5-tree.tres" id="6_73wc1"]
+
+[resource]
+script = ExtResource("2_sydk6")
+nodes = Array[ExtResource("1_owpc7")]([ExtResource("2_hff2e"), ExtResource("3_pq24i"), ExtResource("4_l4u5d"), ExtResource("5_fngj7"), ExtResource("6_73wc1")])
+metadata/_custom_type_script = "uid://bxw0dwgveah1w"

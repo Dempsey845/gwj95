@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://bnf0puru0x673"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="2_aitpw"]
+
+[resource]
+script = ExtResource("2_aitpw")
+text = "Slay the beasts causing harm to the grand tree and it will be yours!"
+speaker = "Tortoise"
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"
