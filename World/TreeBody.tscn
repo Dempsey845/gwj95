@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1dfvhteck6s4"]
+
+[ext_resource type="PackedScene" uid="uid://cuc81ho4m1y8x" path="res://World/Tree.fbx" id="1_vasrx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+height = 4.5
+
+[node name="TreeBody" type="StaticBody3D" unique_id=1931111558]
+
+[node name="Tree" parent="." unique_id=380743845 instance=ExtResource("1_vasrx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1387530213]
+transform = Transform3D(0.9512512, -0.16773127, -0.25881904, 0.1736482, 0.9848077, 0, 0.25488698, -0.04494346, 0.9659258, -0.3, 2.05, -0.1)
+shape = SubResource("CapsuleShape3D_xrivr")
