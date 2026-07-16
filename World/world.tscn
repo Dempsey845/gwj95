@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bva2gmtvlplts" path="res://Enemy/Jellyfish/jellyfish.tscn" id="5_dqu5g"]
 [ext_resource type="Script" uid="uid://mi5ipuwdhf3u" path="res://Sponge/water_level_progress.gd" id="6_bkhv4"]
 [ext_resource type="Terrain3DMaterial" uid="uid://o33dbcybn2fy" path="res://World/Terrain/terrain_3d_material.tres" id="6_dqu5g"]
+[ext_resource type="Script" uid="uid://comm32172yfa5" path="res://World/player_death_manager.gd" id="6_jf64p"]
 [ext_resource type="Terrain3DAssets" uid="uid://d1if8r5xkiivx" path="res://World/Terrain/terrain_3d_assets.tres" id="7_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://b1dfvhteck6s4" path="res://World/TreeBody.tscn" id="9_h2aik"]
 [ext_resource type="ArrayMesh" uid="uid://dr503be0adxcx" path="res://World/MushroomMesh.tres" id="10_f23eu"]
@@ -67,6 +68,42 @@ shader_parameter/wave_speed = 1.6
 shader_parameter/wave_frequency = 8.0
 shader_parameter/bubble_count = 10
 
+[sub_resource type="Animation" id="Animation_i8dl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jf64p"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.52, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rw02v"]
+_data = {
+&"RESET": SubResource("Animation_i8dl0"),
+&"start": SubResource("Animation_jf64p")
+}
+
 [node name="World" type="Node3D" unique_id=896112896 node_paths=PackedStringArray("objective_ui", "zones")]
 script = ExtResource("1_eidgh")
 objective_ui = NodePath("CanvasLayer/ObjectiveUI")
@@ -89,6 +126,11 @@ script = ExtResource("4_yfuda")
 
 [node name="ObjectiveManager" type="Node" parent="." unique_id=980005944]
 script = ExtResource("3_o6lw0")
+
+[node name="PlayerDeathManager" type="Node" parent="." unique_id=31246587 node_paths=PackedStringArray("player", "canvas_layer")]
+script = ExtResource("6_jf64p")
+player = NodePath("../SubViewportContainer/MainViewport/Player")
+canvas_layer = NodePath("../CanvasLayer")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1204420788]
 texture_filter = 1
@@ -602,5 +644,18 @@ player = NodePath("../../../SubViewportContainer/MainViewport/Player")
 [node name="DialogueUI" parent="CanvasLayer" unique_id=1916400925 instance=ExtResource("17_kcyjf")]
 
 [node name="ObjectiveUI" parent="CanvasLayer" unique_id=1606654316 instance=ExtResource("25_dg1ng")]
+
+[node name="TransitionRect" type="ColorRect" parent="CanvasLayer" unique_id=1895587692]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TransitionRect" unique_id=509902668]
+libraries/ = SubResource("AnimationLibrary_rw02v")
+autoplay = &"start"
 
 [node name="LoadingScreen" parent="CanvasLayer" unique_id=1345378447 instance=ExtResource("27_i8dl0")]

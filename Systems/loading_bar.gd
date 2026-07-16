@@ -15,3 +15,5 @@ func start_loading() -> void:
 	await tween.finished
 
 	get_parent().get_parent().visible = false
+
+    

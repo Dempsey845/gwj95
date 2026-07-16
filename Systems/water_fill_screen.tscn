@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c3tuvwur02le0"]
+
+[ext_resource type="Shader" uid="uid://rx5rx1xchvoo" path="res://water_fill.gdshader" id="1_rfq12"]
+[ext_resource type="Script" uid="uid://c66e6ophhdpbe" path="res://Systems/water_fill_rect.gd" id="2_2a3r8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrivr"]
+resource_local_to_scene = true
+shader = ExtResource("1_rfq12")
+shader_parameter/fill = 0.0
+shader_parameter/water_color = Color(0.2, 0.5, 1, 1)
+shader_parameter/water_dark = Color(0.05, 0.2, 0.65, 1)
+shader_parameter/bubble_color = Color(0.7, 0.9, 1, 0.8)
+shader_parameter/foam_color = Color(0.9, 1, 1, 1)
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/wave_height = 0.045
+shader_parameter/wave_speed = 7.87
+shader_parameter/wave_frequency = 8.705
+shader_parameter/bubble_amount = 20.0
+shader_parameter/bubble_speed = 0.4
+shader_parameter/bubble_size = 0.045
+
+[node name="WaterFillScreen" type="Control" unique_id=1101426620]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WaterFillRect" type="ColorRect" parent="." unique_id=1468506789]
+material = SubResource("ShaderMaterial_xrivr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_2a3r8")

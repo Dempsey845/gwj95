@@ -4,8 +4,7 @@ var zones: Array[Zone]
 
 var checkpoint_zone = 0
 
-func _ready() -> void:
-	load_zone()
+var world_scene: PackedScene = preload("uid://j2b3l3a67coe")
 
 func load_zone():
 	if get_tree().current_scene is not World:
@@ -23,5 +22,8 @@ func reload_scene():
 	get_tree().reload_current_scene()
 	await get_tree().scene_changed
 	load_zone()
-
 		
+func load_world_scene():
+	get_tree().change_scene_to_packed.call_deferred(world_scene)
+	await get_tree().scene_changed
+	load_zone()
