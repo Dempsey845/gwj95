@@ -34,7 +34,7 @@ func _ready() -> void:
 	targer_search_timer.timeout.connect(try_look_at_nearest_enemy)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("attack") and !is_attacking:
+	if Input.is_action_just_pressed("attack") and !is_attacking and !DialogueManager.instance.in_dialogue:
 		is_charging = true
 		has_started_charge = false
 		charge_time = 0.0
@@ -48,6 +48,10 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_released("attack") and is_charging:
 		is_charging = false
+
+		if DialogueManager.instance.in_dialogue:
+			fail_charge_attack()
+			return
 
 		if has_started_charge:
 			if charge_time > MIN_CHARGE_TIME:
