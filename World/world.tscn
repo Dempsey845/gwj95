@@ -66,9 +66,10 @@ shader_parameter/wave_speed = 1.6
 shader_parameter/wave_frequency = 8.0
 shader_parameter/bubble_count = 10
 
-[node name="World" type="Node3D" unique_id=896112896 node_paths=PackedStringArray("objective_ui")]
+[node name="World" type="Node3D" unique_id=896112896 node_paths=PackedStringArray("objective_ui", "zones")]
 script = ExtResource("1_eidgh")
 objective_ui = NodePath("CanvasLayer/ObjectiveUI")
+zones = [NodePath("SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone")]
 
 [node name="DialogueManager" type="Node" parent="." unique_id=1307832310 node_paths=PackedStringArray("tortoise_objective_controller")]
 script = ExtResource("2_0lysu")
