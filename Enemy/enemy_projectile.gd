@@ -1,3 +1,4 @@
+class_name EnemyProjectile
 extends Hitbox
 
 @export var move_speed: float = 15.0

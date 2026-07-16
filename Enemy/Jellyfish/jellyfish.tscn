@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bva2gmtvlplts"]
+
+[ext_resource type="PackedScene" uid="uid://c8khf21nsf74x" path="res://Enemy/enemy.tscn" id="1_wn05t"]
+[ext_resource type="PackedScene" uid="uid://ddocgua7awfhx" path="res://Enemy/Jellyfish/jellyfish_visual.tscn" id="2_8a0vm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sifwn"]
+radius = 0.84375
+height = 1.6875
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enkeq"]
+radius = 1.0
+
+[node name="JellyfishEnemy" unique_id=1307595331 instance=ExtResource("1_wn05t")]
+move_speed = 1.5
+chase_distance = 25.0
+attack_distance = 15.0
+attack_cooldown = 3.0
+
+[node name="Hurtbox" parent="." index="2" unique_id=188526900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CollisionShape3D" parent="Hurtbox" index="0" unique_id=1133840102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19171739, 0)
+shape = SubResource("CapsuleShape3D_sifwn")
+
+[node name="CollisionShape3D" parent="." index="3" unique_id=475035002]
+shape = SubResource("CapsuleShape3D_enkeq")
+
+[node name="JellyfishVisual" parent="." index="4" unique_id=1756818101 instance=ExtResource("2_8a0vm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

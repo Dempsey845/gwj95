@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dmwugw3jv8o2h"]
+
+[ext_resource type="PackedScene" uid="uid://b5t4xbdfd64fv" path="res://Enemy/enemy_projectile.tscn" id="1_rdctt"]
+[ext_resource type="Texture2D" uid="uid://bb6lsf74o4cyg" path="res://Enemy/Jellyfish/electricity.png" id="2_otjcc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_otjcc"]
+radius = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_otjcc")
+texture_filter = 0
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = -3.943
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vmcex"]
+material = SubResource("StandardMaterial3D_13qdw")
+size = Vector2(1, 1)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_4uh8c"]
+_data = [Vector2(0.010245901, 0), 0.0, 0.0, 0, 0, Vector2(0.090163946, 0.9900497), 0.0, 0.0, 0, 0, Vector2(0.8729509, 0.97512436), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_b28yd"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5151515)
+colors = PackedColorArray(0.2600161, 0.47939676, 1, 1, 1, 1, 0.18039216, 1)
+
+[node name="ElectricityProjectile" unique_id=1830240741 instance=ExtResource("1_rdctt")]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1340220820]
+shape = SubResource("SphereShape3D_otjcc")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="2" unique_id=1382504749]
+mesh = SubResource("PlaneMesh_vmcex")
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_4uh8c")
+color_initial_ramp = SubResource("Gradient_b28yd")

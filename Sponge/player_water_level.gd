@@ -5,7 +5,7 @@ signal water_level_changed(new_water_level: float)
 
 @export var health: Health
 
-var _current_water_level: float = 75.0
+var _current_water_level: float = 200.0
 var current_water_level: float:
 	get():
 		return _current_water_level
@@ -13,7 +13,7 @@ var current_water_level: float:
 		_current_water_level = value
 		water_level_changed.emit(value)
 
-var max_water_level: float = 100.0
+var max_water_level: float = 200.0
 
 func _ready() -> void:
 	await get_tree().process_frame
