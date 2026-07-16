@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://cgfsmsyun5rwa" path="res://NPC/npc_group.gd" id="18_dqu5g"]
 [ext_resource type="Script" uid="uid://55haqigpp2xb" path="res://Enemy/enemy_group.gd" id="19_x0pyu"]
 [ext_resource type="PackedScene" uid="uid://dhyf1fx435a25" path="res://Systems/Objective/objective_ui.tscn" id="25_dg1ng"]
+[ext_resource type="PackedScene" uid="uid://mxpgc6tsme2i" path="res://Systems/loading_screen.tscn" id="27_i8dl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -601,3 +602,5 @@ player = NodePath("../../../SubViewportContainer/MainViewport/Player")
 [node name="DialogueUI" parent="CanvasLayer" unique_id=1916400925 instance=ExtResource("17_kcyjf")]
 
 [node name="ObjectiveUI" parent="CanvasLayer" unique_id=1606654316 instance=ExtResource("25_dg1ng")]
+
+[node name="LoadingScreen" parent="CanvasLayer" unique_id=1345378447 instance=ExtResource("27_i8dl0")]
