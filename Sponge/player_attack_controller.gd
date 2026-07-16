@@ -17,7 +17,7 @@ var is_charging: bool
 var has_started_charge: bool
 
 const CHARGE_THRESHOLD: float = 0.2
-const MIN_CHARGE_TIME: float = 1.0
+const MIN_CHARGE_TIME: float = 0.5
 
 const NORMAL_ATTACK_COST: float = 10.0
 const CHARGED_ATTACK_COST: float = 20.0
@@ -34,7 +34,7 @@ func _ready() -> void:
 	targer_search_timer.timeout.connect(try_look_at_nearest_enemy)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("attack") and !is_attacking and !DialogueManager.instance.in_dialogue:
+	if Input.is_action_just_pressed("attack") and !is_attacking and !DialogueManager.instance.in_dialogue and water_level.current_water_level >= NORMAL_ATTACK_COST:
 		is_charging = true
 		has_started_charge = false
 		charge_time = 0.0

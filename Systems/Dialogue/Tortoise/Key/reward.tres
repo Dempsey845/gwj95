@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_j41bl")
-text = "Here, the key is your! Be careful in that volcano!"
+text = "Here, the key is yours! Be careful in that volcano!"
 speaker = "Tortoise"
 event = "give_forest_key"
 metadata/_custom_type_script = "uid://bf82wpa51eh6d"
