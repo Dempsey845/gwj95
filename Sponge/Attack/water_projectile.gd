@@ -6,6 +6,8 @@ extends Hitbox
 var move_speed: float = 25.0
 var use_splash_zone: bool
 
+var water_hit_effect_scene: PackedScene = preload("uid://g63t1n138cbj")
+
 func _ready() -> void:
     super._ready()
     life_timer.timeout.connect(func():
@@ -24,4 +26,8 @@ func hit_hurtbox_extend(hurtbox: Hurtbox):
 
             if area is Hurtbox:
                 area.register_hit(damage)
+    
+    var hit_effect = water_hit_effect_scene.instantiate()
+    get_parent().add_child(hit_effect)
+    hit_effect.global_position = global_position
 

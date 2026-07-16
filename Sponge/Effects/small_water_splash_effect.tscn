@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://g63t1n138cbj"]
+
+[ext_resource type="PackedScene" uid="uid://chbrcr8s2cb72" path="res://Sponge/Effects/water_splash_effect.tscn" id="1_cvys7"]
+
+[node name="SmallWaterSplashEffect" unique_id=719205750 instance=ExtResource("1_cvys7")]
+amount = 4
+direction = Vector3(1, 2, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3

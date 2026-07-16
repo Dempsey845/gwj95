@@ -20,11 +20,11 @@ extends CharacterBody3D
 @export var slope_friction: float = 8.0
 
 @export_category("Jump")
-@export var jump_force: float = 13.0
+@export var jump_force: float = 18.0
 @export var gravity: float = 28.0
 
 @export var jump_cut_multiplier: float = 0.5
-@export var jump_hold_gravity: float = 20.0
+@export var jump_hold_gravity: float = 40.0
 
 @export_category("Long Jump")
 @export var long_jump_force: float = 14.0
@@ -61,6 +61,8 @@ var is_skidding: bool = false
 var is_long_jumping: bool = false
 
 var last_wall_normal: Vector3 = Vector3.ZERO
+
+var jump_effect_scene: PackedScene = preload("uid://g63t1n138cbj")
 
 func _physics_process(delta):
 	# Jump Buffer	
@@ -258,10 +260,13 @@ func _physics_process(delta):
 		elif not is_on_floor() and jumps_used < 2 and water_level.current_water_level >= DOUBLE_JUMP_COST:
 			water_level.current_water_level -= DOUBLE_JUMP_COST
 			velocity.y = 0
-			velocity.y = jump_force
+			velocity.y = jump_force * 1.5
 			jumps_used += 1
 			jump_buffer = 0
 			is_jumping = true
+			var jump_effect: CPUParticles3D = jump_effect_scene.instantiate()
+			add_child(jump_effect)
+			jump_effect.global_position = global_position + Vector3.UP * 2
 	
 	# Variable Jump Height	
 	if Input.is_action_just_released("jump") and is_jumping:
