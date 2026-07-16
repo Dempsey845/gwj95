@@ -6,4 +6,5 @@
 script = ExtResource("2_aitpw")
 text = "Slay the beasts causing harm to the grand tree and it will be yours!"
 speaker = "Tortoise"
+event = "start_tortoise_quest"
 metadata/_custom_type_script = "uid://bf82wpa51eh6d"

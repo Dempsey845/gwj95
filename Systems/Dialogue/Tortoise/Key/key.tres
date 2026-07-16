@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://c81j5olkvctpj"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_3c00a"]
+[ext_resource type="Script" uid="uid://bxw0dwgveah1w" path="res://Systems/Dialogue/dialogue.gd" id="2_qommh"]
+[ext_resource type="Resource" uid="uid://d20xoampv8rj4" path="res://Systems/Dialogue/Tortoise/Key/thankyou.tres" id="2_ysvtk"]
+[ext_resource type="Resource" uid="uid://o8mrh11q21ja" path="res://Systems/Dialogue/Tortoise/Key/reward.tres" id="3_hrhb5"]
+
+[resource]
+script = ExtResource("2_qommh")
+nodes = Array[ExtResource("1_3c00a")]([ExtResource("2_ysvtk"), ExtResource("3_hrhb5")])
+metadata/_custom_type_script = "uid://bxw0dwgveah1w"

@@ -13,6 +13,10 @@ func _ready() -> void:
 
     enemy.start_attack.connect(_on_start_attack)
 
+    enemy.get_node("Health").death.connect(func():
+        ObjectiveManager.instance.jellyfishKilled += 1
+    )
+
 func show_warning():
     animation_player.play("show")
 

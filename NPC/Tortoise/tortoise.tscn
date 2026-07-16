@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://u65njyf1hq7e" path="res://Systems/Dialogue/Tortoise/tortoise.tres" id="5_mymry"]
 [ext_resource type="Texture2D" uid="uid://bm63w54gg0xvl" path="res://NPC/Tortoise/tortoise-icon.png" id="6_0xo43"]
 [ext_resource type="Resource" uid="uid://c5i6i7mlao60a" path="res://Systems/Dialogue/Tortoise/Waiting/tortoise_wait.tres" id="7_mymry"]
+[ext_resource type="Resource" uid="uid://c81j5olkvctpj" path="res://Systems/Dialogue/Tortoise/Key/key.tres" id="8_52j81"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 radius = 1.0
@@ -33,5 +34,11 @@ metadata/_custom_type_script = "uid://cpfvcvepkop1s"
 [node name="WaitingDialogue" type="Node" parent="." unique_id=472722667]
 script = ExtResource("4_0xo43")
 dialogue = ExtResource("7_mymry")
+icon_texture = ExtResource("6_0xo43")
+metadata/_custom_type_script = "uid://cpfvcvepkop1s"
+
+[node name="KeyDialgoue" type="Node" parent="." unique_id=460422360]
+script = ExtResource("4_0xo43")
+dialogue = ExtResource("8_52j81")
 icon_texture = ExtResource("6_0xo43")
 metadata/_custom_type_script = "uid://cpfvcvepkop1s"

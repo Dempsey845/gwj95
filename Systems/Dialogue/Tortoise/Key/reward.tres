@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://o8mrh11q21ja"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_j41bl"]
+
+[resource]
+script = ExtResource("1_j41bl")
+text = "Here, the key is your! Be careful in that volcano!"
+speaker = "Tortoise"
+event = "give_forest_key"
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

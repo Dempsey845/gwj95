@@ -12,6 +12,7 @@ height = 1.5
 height = 1.5
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1307595331]
+top_level = true
 script = ExtResource("1_am0pq")
 
 [node name="Health" type="Node" parent="." unique_id=981196090]
@@ -19,6 +20,9 @@ script = ExtResource("1_px1sc")
 metadata/_custom_type_script = "uid://duxvtpogpenj5"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1463751948]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=188526900 node_paths=PackedStringArray("health")]
 collision_layer = 16

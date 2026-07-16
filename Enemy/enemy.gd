@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 
 	elif distance <= chase_distance:
 		chase_player(delta)
-
+		
 	else:
 		velocity = Vector3.ZERO
 
