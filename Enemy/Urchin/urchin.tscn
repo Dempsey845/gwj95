@@ -10,7 +10,7 @@
 radius = 0.3943904
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
-radius = 4.0
+radius = 10.0
 
 [node name="Urchin" type="Area3D" unique_id=1632820619 node_paths=PackedStringArray("health")]
 collision_layer = 16
@@ -24,7 +24,6 @@ metadata/_custom_type_script = "uid://ygglympj550q"
 script = ExtResource("2_uip6t")
 
 [node name="SearchTimer" type="Timer" parent="UrchinAgent" unique_id=1677259630]
-wait_time = 2.0
 autostart = true
 
 [node name="Health" type="Node" parent="." unique_id=2055945653]

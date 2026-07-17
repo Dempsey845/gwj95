@@ -19,11 +19,8 @@ func load_zone():
 	zones[checkpoint_zone].spawn_zone()
 
 func reload_scene():
-	get_tree().reload_current_scene()
-	await get_tree().scene_changed
+	for zone in zones:
+		await zone.destroy_zone()
+
 	load_zone()
-		
-func load_world_scene():
-	get_tree().change_scene_to_packed.call_deferred(world_scene)
-	await get_tree().scene_changed
-	load_zone()
+	zones[checkpoint_zone].move_player_to_start()

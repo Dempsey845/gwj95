@@ -10,3 +10,5 @@ var player: Player
 
 func _ready() -> void:
     player = main_viewport.get_node("Player")
+
+    CheckpointManager.reload_scene()

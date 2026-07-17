@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://u02w1mqdymqt" path="res://Sponge/player_animation_controller.gd" id="2_2s7eb"]
 [ext_resource type="Texture2D" uid="uid://bee5a0egmpwx3" path="res://Sponge/Model/Pupil.png" id="2_qoy8g"]
 [ext_resource type="Script" uid="uid://1n0bffgjnd5k" path="res://Sponge/player_attack_controller.gd" id="3_a5twe"]
+[ext_resource type="Script" uid="uid://dsqglmus07swx" path="res://Sponge/player_reset_agent.gd" id="3_lrxf3"]
 [ext_resource type="Shader" uid="uid://kd38qmh4qb84" path="res://Sponge/Shaders/duller.gdshader" id="3_m7nom"]
 [ext_resource type="Script" uid="uid://c4x3nyynfk3xi" path="res://Sponge/player_water_level.gd" id="3_pxn82"]
 [ext_resource type="Script" uid="uid://d23c330c1vhx7" path="res://Sponge/Camera/camera_controller.gd" id="3_qoy8g"]
@@ -1027,6 +1028,9 @@ script = ExtResource("1_cxng6")
 [node name="PlayerAnimationController" type="Node" parent="." unique_id=787263997]
 script = ExtResource("2_2s7eb")
 
+[node name="PlayerResetAgent" type="Node" parent="." unique_id=102172218]
+script = ExtResource("3_lrxf3")
+
 [node name="PlayerAttackController" type="Node" parent="." unique_id=716088516 node_paths=PackedStringArray("hand_water_meshes", "water_level")]
 script = ExtResource("3_a5twe")
 hand_water_meshes = [NodePath("../Armature/Skeleton3D/LeftHandAttachment/HandWaterMesh"), NodePath("../Armature/Skeleton3D/RightHandAttachment/HandWaterMesh")]
@@ -1128,7 +1132,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.99998283, 0.0021112757, -0.0054642367, -0.005639318, 0.09450573, -0.99550825, -0.0015853915, 0.995522, 0.09451597, 0, 0, 0.004182656)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 0, 0.004182656)
-bones/0/rotation = Quaternion(0.70649964, -0.03649408, 0.036539987, 0.7058267)
+bones/0/rotation = Quaternion(0.707219, -0.0021253347, 0.002120403, 0.7069882)
 bones/0/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/1/name = "root"
 bones/1/parent = 0
@@ -1142,7 +1146,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 2.384185e-07, 0, 0.99999994, 0, -2.384185e-07, 0, 1, 0, 0.0040088072, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(-5.820766e-13, 0.0040088072, -9.795258e-12)
-bones/2/rotation = Quaternion(0.000851746, 4.6457632e-07, -1.243573e-06, 0.9999997)
+bones/2/rotation = Quaternion(0.0005628388, -2.0955511e-08, 6.021502e-07, 0.9999999)
 bones/2/scale = Vector3(1, 0.99999994, 1)
 bones/3/name = "head_end"
 bones/3/parent = 2
@@ -1163,7 +1167,7 @@ bones/5/parent = 4
 bones/5/rest = Transform3D(0.9985697, 0.053462923, -6.158661e-08, -0.053462923, 0.9985697, -6.2668497e-09, 6.1163476e-08, 9.550487e-09, 1, 3.2993522e-10, 0.0053606643, -1.5669739e-17)
 bones/5/enabled = true
 bones/5/position = Vector3(7.555354e-10, 0.0053606657, -3.958121e-11)
-bones/5/rotation = Quaternion(0.00080614525, -0.006016265, -0.48443103, 0.8748085)
+bones/5/rotation = Quaternion(0.00071188307, -0.0018349753, -0.48481822, 0.8746127)
 bones/5/scale = Vector3(0.9999999, 1.0000001, 0.99999994)
 bones/6/name = "forearm.l"
 bones/6/parent = 5
@@ -1198,7 +1202,7 @@ bones/10/parent = 9
 bones/10/rest = Transform3D(0.9985697, -0.053462923, 6.158661e-08, 0.053462923, 0.9985697, -6.2668497e-09, -6.1163476e-08, 9.550487e-09, 1, -3.2993522e-10, 0.0053606643, -1.5669739e-17)
 bones/10/enabled = true
 bones/10/position = Vector3(1.3038516e-10, 0.005360665, -1.7229468e-10)
-bones/10/rotation = Quaternion(-0.00010228182, -0.006072458, 0.48486304, 0.8745691)
+bones/10/rotation = Quaternion(0.00011678931, -0.0019870368, 0.4848986, 0.87456816)
 bones/10/scale = Vector3(1, 0.9999998, 1)
 bones/11/name = "forearm.r"
 bones/11/parent = 10
@@ -1233,21 +1237,21 @@ bones/15/parent = 14
 bones/15/rest = Transform3D(0.99251646, 0.09160156, 0.080747254, -0.054798402, -0.25681958, 0.9649048, 0.109124236, -0.96210855, -0.24987808, 2.678484e-11, 0.0022463906, 4.3563553e-10)
 bones/15/enabled = true
 bones/15/position = Vector3(2.7939677e-11, 0.0022463906, 3.3248468e-10)
-bones/15/rotation = Quaternion(-0.79045016, -0.011615137, -0.0600333, 0.60946673)
+bones/15/rotation = Quaternion(-0.7904522, -0.01169105, -0.06009225, 0.60945684)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "lower_leg.l"
 bones/16/parent = 15
 bones/16/rest = Transform3D(0.94602597, -0.3240908, 3.754444e-08, 0.32409078, 0.9460261, 2.5045995e-07, -1.16689776e-07, -2.2477384e-07, 1, -1.4032481e-10, 0.0017314843, 1.13331386e-10)
 bones/16/enabled = true
 bones/16/position = Vector3(-1.2313443e-10, 0.0017314836, 8.930043e-11)
-bones/16/rotation = Quaternion(-1.1736247e-07, 3.8793555e-08, 0.1661559, 0.98609954)
+bones/16/rotation = Quaternion(-1.1720791e-07, 3.9318447e-08, 0.16392384, 0.98647296)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "upper_foot.l"
 bones/17/parent = 16
 bones/17/rest = Transform3D(0.99974567, 0.02255742, -1.2416147e-07, -0.02255742, 0.99974567, -1.1933494e-08, 1.238607e-07, 1.4731221e-08, 1, -1.0515316e-10, 0.0010870636, -1.9073486e-10)
 bones/17/enabled = true
 bones/17/position = Vector3(3.5672074e-10, 0.0010870639, -2.5147814e-10)
-bones/17/rotation = Quaternion(6.667843e-09, -6.200935e-08, -0.011259247, 0.99993664)
+bones/17/rotation = Quaternion(7.004012e-09, -6.197228e-08, -0.005836568, 0.999983)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "foot.l"
 bones/18/parent = 17
@@ -1275,21 +1279,21 @@ bones/21/parent = 20
 bones/21/rest = Transform3D(0.99251646, -0.09160156, -0.080747254, 0.054798402, -0.25681958, 0.9649048, -0.109124236, -0.96210855, -0.24987808, -2.678484e-11, 0.0022463906, 4.3563553e-10)
 bones/21/enabled = true
 bones/21/position = Vector3(-2.7939677e-11, 0.0022463906, 3.3248468e-10)
-bones/21/rotation = Quaternion(-0.7904477, 0.011442491, 0.059899747, 0.6094863)
+bones/21/rotation = Quaternion(-0.79043454, 0.011814801, 0.06018576, 0.60946816)
 bones/21/scale = Vector3(0.9999999, 1, 1)
 bones/22/name = "hip.r.002"
 bones/22/parent = 21
 bones/22/rest = Transform3D(0.94602597, 0.3240908, -3.754444e-08, -0.32409078, 0.9460261, 2.5045995e-07, 1.16689776e-07, -2.2477384e-07, 1, 1.4032481e-10, 0.0017314843, 1.13331386e-10)
 bones/22/enabled = true
 bones/22/position = Vector3(-3.621281e-12, 0.0017314837, -1.2474008e-10)
-bones/22/rotation = Quaternion(-1.11311785e-07, -4.046814e-08, -0.15994002, 0.98712677)
+bones/22/rotation = Quaternion(-1.1179912e-07, -4.101817e-08, -0.16235374, 0.98673266)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/name = "hip.r.003"
 bones/23/parent = 22
 bones/23/rest = Transform3D(0.99974567, -0.02255742, 1.2416147e-07, 0.02255742, 0.99974567, -1.1933494e-08, -1.238607e-07, 1.4731221e-08, 1, 1.0515316e-10, 0.0010870636, -1.9073486e-10)
 bones/23/enabled = true
 bones/23/position = Vector3(3.3924153e-12, 0.001087064, -2.5069105e-10)
-bones/23/rotation = Quaternion(6.854832e-09, 6.1988956e-08, 0.008243391, 0.999966)
+bones/23/rotation = Quaternion(6.711755e-09, 6.200461e-08, 0.010551108, 0.9999444)
 bones/23/scale = Vector3(0.9999999, 0.9999999, 1)
 bones/24/name = "hip.r.004"
 bones/24/parent = 23
@@ -1314,7 +1318,7 @@ script = ExtResource("5_2xayq")
 water_level = NodePath("../../../PlayerWaterLevel")
 
 [node name="LeftHandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=1551371809]
-transform = Transform3D(-0.8591331, 0.51174146, 0.0032912407, -0.008338548, -0.007568063, -0.99993664, -0.511684, -0.85910636, 0.010769127, 0.0061695958, -2.0474068e-05, 0.008432739)
+transform = Transform3D(-0.90517694, 0.4250347, 0.00048715356, -0.0019619819, -0.0030322021, -0.99999344, -0.4250303, -0.90517235, 0.0035785136, 0.006551645, -8.340483e-06, 0.007811973)
 bone_name = "hand.l"
 bone_idx = 7
 
@@ -1325,7 +1329,7 @@ cast_shadow = 0
 mesh = SubResource("SphereMesh_xrivr")
 
 [node name="RightHandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=138290510]
-transform = Transform3D(-0.9461569, -0.3236356, 0.0068556974, -0.010063092, 0.008238096, -0.9999154, 0.323552, -0.9461459, -0.01105134, -0.006908343, 1.0924885e-05, 0.0070753493)
+transform = Transform3D(-0.91028875, -0.41396815, 0.0021313508, -0.003465845, 0.0024726253, -0.9999909, 0.41395923, -0.91028804, -0.0036856313, -0.006594392, 3.0045321e-06, 0.007732813)
 bone_name = "hand.r"
 bone_idx = 12
 

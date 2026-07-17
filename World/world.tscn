@@ -129,7 +129,7 @@ _data = {
 [node name="World" type="Node3D" unique_id=896112896 node_paths=PackedStringArray("objective_ui", "zones")]
 script = ExtResource("1_eidgh")
 objective_ui = NodePath("CanvasLayer/ObjectiveUI")
-zones = [NodePath("SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone"), NodePath("SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone")]
+zones = [NodePath("SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone"), NodePath("SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone")]
 
 [node name="DialogueManager" type="Node" parent="." unique_id=1307832310 node_paths=PackedStringArray("tortoise_objective_controller")]
 script = ExtResource("2_0lysu")
@@ -179,40 +179,60 @@ shadow_enabled = true
 environment = SubResource("Environment_3f78f")
 
 [node name="Player" parent="SubViewportContainer/MainViewport" unique_id=1437856355 instance=ExtResource("1_62w18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 28, 96.564514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 456.5645)
 top_level = true
 
-[node name="WaterPuddle" parent="SubViewportContainer/MainViewport" unique_id=712434096 instance=ExtResource("23_rw02v")]
+[node name="WaterPuddles" type="Node3D" parent="SubViewportContainer/MainViewport" unique_id=1558544440]
+
+[node name="WaterPuddle" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=712434096 instance=ExtResource("23_rw02v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 519.5645)
 y_offset = 2.0
 heal_amount = 10
+drain_duration = 10.0
 
-[node name="MeshInstance3D" parent="SubViewportContainer/MainViewport/WaterPuddle" index="0" unique_id=2061789719]
+[node name="MeshInstance3D" parent="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle" index="0" unique_id=2061789719]
 mesh = SubResource("PlaneMesh_s5a7k")
 
-[node name="CollisionShape3D" parent="SubViewportContainer/MainViewport/WaterPuddle" index="1" unique_id=1079477120]
+[node name="CollisionShape3D" parent="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle" index="1" unique_id=1079477120]
 shape = SubResource("CylinderShape3D_koyeq")
 debug_color = Color(0.9495, 0.04912501, 0.5460556, 1)
 
-[node name="WaterPuddle6" parent="SubViewportContainer/MainViewport" unique_id=1617648974 instance=ExtResource("23_rw02v")]
+[node name="WaterPuddle6" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=1617648974 instance=ExtResource("23_rw02v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 22.8, 137)
 y_offset = 5.0
 heal_amount = 20
 drain_duration = 20.0
 
-[node name="MeshInstance3D" parent="SubViewportContainer/MainViewport/WaterPuddle6" index="0" unique_id=2061789719]
+[node name="MeshInstance3D" parent="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle6" index="0" unique_id=2061789719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20000076, 5)
 mesh = SubResource("PlaneMesh_3ql07")
 
-[node name="CollisionShape3D" parent="SubViewportContainer/MainViewport/WaterPuddle6" index="1" unique_id=1079477120]
+[node name="CollisionShape3D" parent="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle6" index="1" unique_id=1079477120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4656239, 0.5)
 shape = SubResource("CylinderShape3D_w08tj")
 debug_color = Color(0.9683617, 0, 0.46526784, 1)
+
+[node name="WaterPuddle2" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=644729681 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 490.26453)
+y_offset = 0.8
+
+[node name="WaterPuddle3" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=1183589173 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.035103, 0.053391814, 468.11)
+y_offset = 0.4
+
+[node name="WaterPuddle4" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=1659048404 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.222693, -0.063479364, 595.11)
+y_offset = 0.7
+
+[node name="WaterPuddle5" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=232270177 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.036815, -0.027234137, 761.0566)
+y_offset = 0.7
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/MainViewport" unique_id=1261396565]
 navigation_mesh = SubResource("NavigationMesh_xrivr")
 
 [node name="TreeGroups" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1770278197]
+metadata/_edit_lock_ = true
 
 [node name="TreeGroup" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=857642232]
 transform = Transform3D(0.7007428, 0, 0.7007428, 0, 0.991, 0, -0.7007428, 0, 0.7007428, -48, -1, 452.6)
@@ -597,10 +617,11 @@ transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0
 debug_level = 0
 cast_shadows = 0
 
-[node name="ForestZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1281440232 node_paths=PackedStringArray("npc_groups", "enemy_groups", "player")]
+[node name="ForestZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1281440232 node_paths=PackedStringArray("npc_groups", "enemy_groups", "start_point", "player")]
 script = ExtResource("17_dg1ng")
 npc_groups = [NodePath("NPC_Group")]
-enemy_groups = [NodePath("GrandTree/JellyfishSpawnPoints/JellyFish_EnemyGroup"), NodePath("UrchinPoints/EnemyGroup")]
+enemy_groups = [NodePath("GrandTree/JellyfishSpawnPoints/JellyFish_EnemyGroup"), NodePath("UrchinPoints/ForestUrchinGroup"), NodePath("ForestCrabs/ForestCrabGroup")]
+start_point = NodePath("StartPoint")
 player = NodePath("../../Player")
 
 [node name="GrandTree" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1643091550 instance=ExtResource("15_f23eu")]
@@ -699,7 +720,7 @@ transform = Transform3D(0.9961948, 0.08682408, -0.007596123, -0.08715573, 0.9924
 [node name="Marker3D2" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/UrchinPoints" unique_id=1725729368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.036815, -0.8272341, 761.0566)
 
-[node name="EnemyGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/UrchinPoints" unique_id=115400634 node_paths=PackedStringArray("enemies")]
+[node name="ForestUrchinGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/UrchinPoints" unique_id=115400634 node_paths=PackedStringArray("enemies")]
 script = ExtResource("19_x0pyu")
 enemies = {
 NodePath("../Marker3D"): ExtResource("24_3sd22"),
@@ -713,6 +734,137 @@ NodePath("../Marker3D9"): ExtResource("24_3sd22"),
 NodePath("../Marker3D2"): ExtResource("24_3sd22")
 }
 metadata/_custom_type_script = "uid://55haqigpp2xb"
+
+[node name="ForestCrabs" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=477673112]
+
+[node name="ForestCrabGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=309447753 node_paths=PackedStringArray("enemies")]
+script = ExtResource("19_x0pyu")
+enemies = {
+NodePath("../Marker3D30"): ExtResource("19_3ql07"),
+NodePath("../Marker3D29"): ExtResource("19_3ql07"),
+NodePath("../Marker3D28"): ExtResource("19_3ql07"),
+NodePath("../Marker3D27"): ExtResource("19_3ql07"),
+NodePath("../Marker3D26"): ExtResource("19_3ql07"),
+NodePath("../Marker3D25"): ExtResource("19_3ql07"),
+NodePath("../Marker3D24"): ExtResource("19_3ql07"),
+NodePath("../Marker3D23"): ExtResource("19_3ql07"),
+NodePath("../Marker3D22"): ExtResource("19_3ql07"),
+NodePath("../Marker3D21"): ExtResource("19_3ql07"),
+NodePath("../Marker3D20"): ExtResource("19_3ql07"),
+NodePath("../Marker3D19"): ExtResource("19_3ql07"),
+NodePath("../Marker3D18"): ExtResource("19_3ql07"),
+NodePath("../Marker3D17"): ExtResource("19_3ql07"),
+NodePath("../Marker3D16"): ExtResource("19_3ql07"),
+NodePath("../Marker3D15"): ExtResource("19_3ql07"),
+NodePath("../Marker3D14"): ExtResource("19_3ql07"),
+NodePath("../Marker3D13"): ExtResource("19_3ql07"),
+NodePath("../Marker3D12"): ExtResource("19_3ql07"),
+NodePath("../Marker3D11"): ExtResource("19_3ql07"),
+NodePath("../Marker3D10"): ExtResource("19_3ql07"),
+NodePath("../Marker3D9"): ExtResource("19_3ql07"),
+NodePath("../Marker3D8"): ExtResource("19_3ql07"),
+NodePath("../Marker3D7"): ExtResource("19_3ql07"),
+NodePath("../Marker3D6"): ExtResource("19_3ql07"),
+NodePath("../Marker3D5"): ExtResource("19_3ql07"),
+NodePath("../Marker3D4"): ExtResource("19_3ql07"),
+NodePath("../Marker3D3"): ExtResource("19_3ql07"),
+NodePath("../Marker3D2"): ExtResource("19_3ql07"),
+NodePath("../Marker3D"): ExtResource("19_3ql07")
+}
+metadata/_custom_type_script = "uid://55haqigpp2xb"
+
+[node name="Marker3D" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=603076527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 456.30002)
+
+[node name="Marker3D2" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1653638584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7515793, 0, 460.641)
+
+[node name="Marker3D3" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1851122342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.913765, 0, 452.77298)
+
+[node name="Marker3D4" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1012401373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.967827, 0, 465.7959)
+
+[node name="Marker3D5" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=291139594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.518745, 0, 498.08182)
+
+[node name="Marker3D6" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1060267901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.68193, 0, 510.83337)
+
+[node name="Marker3D7" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1483664421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.75888, 0, 484.24503)
+
+[node name="Marker3D8" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=67587647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.23915, 0, 512.73254)
+
+[node name="Marker3D9" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=808999256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.054085, 0, 488.0433)
+
+[node name="Marker3D10" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1892854760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.945915, 0, 524.04333)
+
+[node name="Marker3D11" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1176443464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.263996, 0, 546.56213)
+
+[node name="Marker3D12" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1594664594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.39501, 0, 543.5777)
+
+[node name="Marker3D13" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1407536662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.78275, 0, 573.4218)
+
+[node name="Marker3D14" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=555974869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.377647, 0, 581.9661)
+
+[node name="Marker3D15" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=584213935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.040184, 0, 593.3585)
+
+[node name="Marker3D16" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1295223241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.31871, 0, 583.5484)
+
+[node name="Marker3D17" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=290161299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.45797, 0, 601.9029)
+
+[node name="Marker3D18" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1838751550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.913734, 0, 581.6497)
+
+[node name="Marker3D19" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1505850713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.913734, 0, 594.6497)
+
+[node name="Marker3D20" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1886146650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.989624, 0, 646.23206)
+
+[node name="Marker3D21" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=166503701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.103523, 0, 635.789)
+
+[node name="Marker3D22" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=141533186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.896477, 0, 690.789)
+
+[node name="Marker3D23" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1005556158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.086372, 0, 687.308)
+
+[node name="Marker3D24" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=2039837878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0104, 0, 680.0295)
+
+[node name="Marker3D25" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1784944708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.356758, 0, 723.7004)
+
+[node name="Marker3D26" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1330858845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.356758, 0, 728.7004)
+
+[node name="Marker3D27" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=697419841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.356758, 0, 734.7004)
+
+[node name="Marker3D28" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1662904036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.66063, 0, 760.3333)
+
+[node name="Marker3D29" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=1197748049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.470726, 0, 767.9283)
+
+[node name="Marker3D30" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=322284013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.88849, 0, 778.6878)
+
+[node name="StartPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=848666975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 63, 258)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=488215603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 39)
@@ -826,10 +978,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.377415, 54.8, 180.1598)
 size = Vector3(8, 1, 7)
 material = ExtResource("18_s5a7k")
 
-[node name="RockyMountainsZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1967872138 node_paths=PackedStringArray("enemy_groups", "player")]
+[node name="RockyMountainsZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1967872138 node_paths=PackedStringArray("enemy_groups", "start_point", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 22.8, 137)
 script = ExtResource("17_dg1ng")
 enemy_groups = [NodePath("EnemyGroup"), NodePath("UrchinPoints/UrchinEnemyGroup")]
+start_point = NodePath("StartPoint")
 player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://b4dibo6con0hc"
 
@@ -907,28 +1060,14 @@ transform = Transform3D(0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 
 [node name="Marker3D9" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone/UrchinPoints" unique_id=1167984205]
 transform = Transform3D(0.9961947, 0.08715574, 0, -0.085954085, 0.9824598, 0.16548301, 0.014422794, -0.1648533, 0.9862126, -14.200001, -1.5609436, 26.581085)
 
+[node name="StartPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone" unique_id=1365280404]
+
 [node name="DialogueController" type="Node" parent="SubViewportContainer/MainViewport" unique_id=867543835 node_paths=PackedStringArray("dialogue_ui")]
 script = ExtResource("13_5xkvv")
 dialogue_ui = NodePath("../../../CanvasLayer/DialogueUI")
 dialogue = ExtResource("14_xw5lg")
 icon_texture = ExtResource("15_0lysu")
 metadata/_custom_type_script = "uid://cpfvcvepkop1s"
-
-[node name="WaterPuddle2" parent="SubViewportContainer/MainViewport" unique_id=644729681 instance=ExtResource("23_rw02v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 490.26453)
-y_offset = 0.8
-
-[node name="WaterPuddle3" parent="SubViewportContainer/MainViewport" unique_id=1183589173 instance=ExtResource("23_rw02v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.035103, 0.053391814, 468.11)
-y_offset = 0.4
-
-[node name="WaterPuddle4" parent="SubViewportContainer/MainViewport" unique_id=1659048404 instance=ExtResource("23_rw02v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.222693, -0.063479364, 595.11)
-y_offset = 0.7
-
-[node name="WaterPuddle5" parent="SubViewportContainer/MainViewport" unique_id=232270177 instance=ExtResource("23_rw02v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.036815, -0.027234137, 761.0566)
-y_offset = 0.7
 
 [node name="MultiMushroom" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport" unique_id=209787600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 673)
@@ -983,5 +1122,5 @@ autoplay = &"start"
 
 [node name="LoadingScreen" parent="CanvasLayer" unique_id=1345378447 instance=ExtResource("27_i8dl0")]
 
-[editable path="SubViewportContainer/MainViewport/WaterPuddle"]
-[editable path="SubViewportContainer/MainViewport/WaterPuddle6"]
+[editable path="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle"]
+[editable path="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle6"]

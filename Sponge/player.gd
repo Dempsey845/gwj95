@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 # SM64-style character controller
 
+signal reset_triggered
+
 @export_category("Movement")
 @export var max_speed : float = 10.0
 
@@ -360,3 +362,6 @@ func check_wall() -> bool:
 
 	last_wall_normal = Vector3.ZERO
 	return false
+
+func reset():
+	reset_triggered.emit()
