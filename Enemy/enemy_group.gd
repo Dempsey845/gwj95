@@ -12,5 +12,6 @@ func spawn_group(player: Player):
 			enemy.add_player(player)
 		get_tree().current_scene.main_viewport.add_child(enemy)
 		enemy.global_position = spawn_point.global_position
+		enemy.global_rotation = spawn_point.global_rotation
 		enemy_arr.append(enemy)
 	return enemy_arr

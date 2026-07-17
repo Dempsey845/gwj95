@@ -2,18 +2,54 @@
 
 [ext_resource type="PackedScene" uid="uid://df0gklol08jj0" path="res://NPC/Tortoise/Tortoise.fbx" id="1_otm0k"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+albedo_color = Color(0.6491311, 0.40213275, 0.084885724, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xrivr"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 3.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1lj4"]
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
+radial_segments = 8
+rings = 6
+
 [node name="Tortoise" unique_id=646853677 instance=ExtResource("1_otm0k")]
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(606416181) index="0" unique_id=271668968]
-bones/0/rotation = Quaternion(0.51273465, 1.0234682e-07, 6.112273e-08, 0.8585472)
-bones/1/rotation = Quaternion(0.34379086, -1.3745098e-15, 8.196612e-08, 0.93904626)
-bones/2/rotation = Quaternion(0.18130212, 1.6035555e-14, 4.3225793e-08, 0.98342746)
-bones/4/rotation = Quaternion(0.1692599, -0.11629949, -0.8066264, 0.55423754)
+bones/0/rotation = Quaternion(0.50810415, 1.020162e-07, 6.167296e-08, 0.8612957)
+bones/1/rotation = Quaternion(0.32243106, -1.856737e-09, 8.1945096e-08, 0.94659305)
+bones/2/rotation = Quaternion(0.22275208, 1.8290542e-09, 4.318708e-08, 0.97487515)
+bones/4/rotation = Quaternion(0.18601502, -0.091748014, -0.8097961, 0.54882705)
 bones/5/rotation = Quaternion(0.22712526, 0.09784052, -0.038744416, 0.9681633)
 bones/6/rotation = Quaternion(0.24788426, 0.12554906, -0.021198044, 0.96038616)
-bones/11/rotation = Quaternion(0.007166113, 0.004923853, 0.8241624, 0.56628674)
+bones/11/rotation = Quaternion(-0.0025100664, 0.019006006, 0.82392377, 0.5663763)
 bones/12/rotation = Quaternion(0.0282271, 0.011619365, 0.5498201, 0.83472514)
-bones/13/rotation = Quaternion(-0.02551364, 0.012922254, 0.022058032, 0.99934757)
+bones/13/rotation = Quaternion(-0.027667396, 0.065032385, 0.035091657, 0.99688214)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1" unique_id=318660131]
+transform = Transform3D(-0.9945179, 0.034267932, -0.09879103, -0.03820944, -0.998536, 0.03828358, -0.097334504, 0.041848466, 0.99437135, -0.0064657675, -0.008028144, 0.011601938)
+bone_name = "hand.r"
+bone_idx = 13
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D" index="0" unique_id=312525391]
+transform = Transform3D(0.0049997373, -5.106354e-05, 4.2273095e-06, -4.226167e-06, 1.4717807e-07, 0.004999999, -5.1063653e-05, -0.0049997387, 1.04348146e-07, -0.00102726, 0.00200555, -0.0037628277)
+material_override = SubResource("StandardMaterial3D_13qdw")
+mesh = SubResource("CylinderMesh_xrivr")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2" unique_id=1674136269]
+transform = Transform3D(-0.04436578, 0.08292782, -0.99556756, -0.8517875, -0.5238564, -0.0056772307, -0.5220053, 0.84775996, 0.09387815, 0.007852703, -0.006427284, 0.014629914)
+bone_name = "hand.l"
+bone_idx = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/BoneAttachment3D2" index="0" unique_id=621896851]
+transform = Transform3D(0.008000001, 3.4924597e-09, 6.039045e-10, -2.3283064e-10, 0.008000001, -4.292815e-10, -8.731149e-11, 7.4942363e-10, 0.008, 0.00036237808, 0.0064051356, 0.00028426107)
+material_override = SubResource("StandardMaterial3D_b1lj4")
+mesh = SubResource("SphereMesh_xrivr")
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=1943715562]
 autoplay = &"Armature|Idle"

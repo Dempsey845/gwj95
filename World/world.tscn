@@ -31,6 +31,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cof7588flt8a6" path="res://World/bush_mesh.tres" id="21_koyeq"]
 [ext_resource type="PackedScene" uid="uid://d23g0vt3rg3nv" path="res://Sponge/Heals/water_puddle.tscn" id="23_rw02v"]
 [ext_resource type="PackedScene" uid="uid://vv4hsig1a753" path="res://Enemy/Urchin/urchin.tscn" id="24_3sd22"]
+[ext_resource type="PackedScene" uid="uid://cagsaux5y34kx" path="res://NPC/Tortoise/TortoiseHut.fbx" id="24_w08tj"]
 [ext_resource type="PackedScene" uid="uid://dhyf1fx435a25" path="res://Systems/Objective/objective_ui.tscn" id="25_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://mxpgc6tsme2i" path="res://Systems/loading_screen.tscn" id="27_i8dl0"]
 
@@ -75,6 +76,9 @@ mesh = ExtResource("10_f23eu")
 [sub_resource type="MultiMesh" id="MultiMesh_3ql07"]
 transform_format = 1
 mesh = ExtResource("21_koyeq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 4.363606
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bkhv4"]
 shader = ExtResource("4_k8do8")
@@ -231,388 +235,6 @@ y_offset = 0.7
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/MainViewport" unique_id=1261396565]
 navigation_mesh = SubResource("NavigationMesh_xrivr")
 
-[node name="TreeGroups" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1770278197]
-metadata/_edit_lock_ = true
-
-[node name="TreeGroup" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=857642232]
-transform = Transform3D(0.7007428, 0, 0.7007428, 0, 0.991, 0, -0.7007428, 0, 0.7007428, -48, -1, 452.6)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1931111558 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1656426447 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1343172490 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=214312535 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1514880554 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=2146461930 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=2113302991 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1896740169 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1338703933 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1535859198 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=925502870 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=850353514 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=2071113059 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=1238804577 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup" unique_id=684386242 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
-
-[node name="TreeGroup2" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=1891335999]
-transform = Transform3D(0.7007428, 0, 0.7007428, 0, 0.991, 0, -0.7007428, 0, 0.7007428, -83.16353, -1, 551.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=2056513021 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=2005046815 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=112440430 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=1769187832 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
-
-[node name="TreeBody16" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=881398949 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.9641852, 0, -1.9641857, 0, 2.7777781, 0, 1.9641857, 0, -1.9641852, 16.985992, 0, 32.216003)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=160859357 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=791473679 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=181784870 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=1832117169 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=70154220 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=712975410 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=1399712387 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=1060399880 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=391457744 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=978809337 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup2" unique_id=1424278466 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
-
-[node name="TreeGroup3" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=1414114]
-transform = Transform3D(0.25648957, 0, 0.95723253, 0, 0.991, 0, -0.95723253, 0, 0.25648957, -96.16353, -1, 668.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1902393519 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1275424588 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=2027413763 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=101066211 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1524640313 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1059818669 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1895573214 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=308949632 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=406021670 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=776792914 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=914989676 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=713396079 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=87422188 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1077273863 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464004, 0, 1.1232, 0, 1.9454395, -24.51036, -1.4245017, -9.736984)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup3" unique_id=1685135378 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.3841858e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.3841858e-07, -13.430344, -0.9496678, -24.174606)
-
-[node name="TreeGroup5" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=949037251]
-transform = Transform3D(0.2564897, 0, 0.9572325, 0, 0.991, 0, -0.9572325, 0, 0.2564897, 62.83647, -1, 475.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1029159956 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1913457860 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=118387934 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1228118856 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.5530325, 0, 2.1367526, 0, 0.5530325, 0, -2.0639446, -24.245209, 0, 12.416603)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=401344366 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=97684094 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1025550230 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1526339299 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1277948759 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=827255411 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1705843113 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=2040868085 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=3402861 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=1594245889 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup5" unique_id=518949380 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
-
-[node name="TreeGroup6" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=1708992226]
-transform = Transform3D(-0.991, 0, -1.4963683e-07, 0, 0.991, 0, 1.4963683e-07, 0, -0.991, 22.836472, -1, 613.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1193290544 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1453238284 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1639383081 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=649639794 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639448, 0, -0.5530325, 0, 2.1367526, 0, 0.5530325, 0, -2.0639448, 8.753565, 0, 23.215057)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1838482918 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=888894840 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=420064816 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1005012091 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1692330033 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1927371814 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=667197876 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1574795681 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=703035789 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=99993859 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup6" unique_id=1635488982 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
-
-[node name="TreeGroup7" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=1481767523]
-transform = Transform3D(-0.9572325, 0, 0.25648975, 0, 0.991, 0, -0.25648975, 0, -0.9572325, 39.83647, -1, 771.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=1455567073 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=700020598 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=1502910913 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=2121359768 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -1.6625061, 0, 33.768494)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=1310354909 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=1456776658 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=383370968 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=438789905 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=530273703 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=1366222598 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=2141869008 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=2135893098 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=877332049 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=2802681 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup7" unique_id=29574456 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
-
-[node name="TreeGroup8" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=1256213250]
-transform = Transform3D(0.25648978, 0, 0.9572325, 0, 0.991, 0, -0.9572325, 0, 0.25648978, 82.83647, -1, 684.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1472284089 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=75069922 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1481906540 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=245462495 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -19.557007, 0, 17.669708)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1862794604 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=977047835 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1834393997 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1684909731 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1013038802 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=1606818862 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=864779222 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=978783664 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=431949187 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=385700413 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup8" unique_id=779843001 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
-
-[node name="TreeGroup4" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups" unique_id=338817226]
-transform = Transform3D(0.8582311, 0, 0.4955, 0, 0.991, 0, -0.4955, 0, 0.8582311, -88.16353, -1, 763.34973)
-
-[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1904489146 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
-
-[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=504077864 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
-
-[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1171039386 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
-
-[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1782001479 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367526, 0, 0.55303246, 0, -2.0639446, -24.39804, 0, 12.885834)
-
-[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=399950084 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
-
-[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=437402137 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
-
-[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1447558225 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
-
-[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1531780770 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
-
-[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1329831360 instance=ExtResource("9_h2aik")]
-
-[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=2089199221 instance=ExtResource("9_h2aik")]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
-
-[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=1041746865 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
-
-[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=19736010 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
-
-[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=395962499 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
-
-[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=2139205842 instance=ExtResource("9_h2aik")]
-transform = Transform3D(1.9454396, 0, -1.1232002, 0, 2.2464004, 0, 1.1232002, 0, 1.9454396, -28.625671, -1.4245018, -8.565247)
-
-[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=720108787 instance=ExtResource("9_h2aik")]
-transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
-
 [node name="Terrain3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=727893777 instance=ExtResource("10_3sd22")]
 debug_level = 0
 cast_shadows = 0
@@ -623,6 +245,482 @@ npc_groups = [NodePath("NPC_Group")]
 enemy_groups = [NodePath("GrandTree/JellyfishSpawnPoints/JellyFish_EnemyGroup"), NodePath("UrchinPoints/ForestUrchinGroup"), NodePath("ForestCrabs/ForestCrabGroup")]
 start_point = NodePath("StartPoint")
 player = NodePath("../../Player")
+
+[node name="TreeGroups" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1770278197]
+metadata/_edit_lock_ = true
+
+[node name="TreeGroup" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=857642232]
+transform = Transform3D(0.7007428, 0, 0.7007428, 0, 0.991, 0, -0.7007428, 0, 0.7007428, -48, -1, 452.6)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1931111558 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1656426447 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1343172490 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=214312535 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1514880554 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=2146461930 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=2113302991 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1896740169 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1338703933 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1535859198 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=925502870 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=850353514 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=2071113059 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=1238804577 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup" unique_id=684386242 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
+
+[node name="TreeGroup2" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=1891335999]
+transform = Transform3D(0.7007428, 0, 0.7007428, 0, 0.991, 0, -0.7007428, 0, 0.7007428, -83.16353, -1, 551.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=2056513021 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=2005046815 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=112440430 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=1769187832 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
+
+[node name="TreeBody16" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=881398949 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.9641852, 0, -1.9641857, 0, 2.7777781, 0, 1.9641857, 0, -1.9641852, 16.985992, 0, 32.216003)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=160859357 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=791473679 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=181784870 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=1832117169 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=70154220 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=712975410 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=1399712387 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=1060399880 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=391457744 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=978809337 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup2" unique_id=1424278466 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
+
+[node name="TreeGroup3" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=1414114]
+transform = Transform3D(-0.4955001, 0, 0.85823107, 0, 0.991, 0, -0.85823107, 0, -0.4955001, -60.16353, -1, 685.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1902393519 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1275424588 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=2027413763 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=101066211 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367524, 0, 0.55303246, 0, -2.0639446, 6.3793945, 0, 18.466705)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1524640313 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1059818669 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1895573214 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=308949632 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=406021670 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=776792914 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=914989676 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=713396079 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=87422188 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1077273863 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464004, 0, 1.1232, 0, 1.9454395, -24.51036, -1.4245017, -9.736984)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup3" unique_id=1685135378 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.3841858e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.3841858e-07, -13.430344, -0.9496678, -24.174606)
+
+[node name="TreeGroup5" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=949037251]
+transform = Transform3D(0.2564897, 0, 0.9572325, 0, 0.991, 0, -0.9572325, 0, 0.2564897, 62.83647, -1, 475.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1029159956 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1913457860 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=118387934 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1228118856 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.5530325, 0, 2.1367526, 0, 0.5530325, 0, -2.0639446, -24.245209, 0, 12.416603)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=401344366 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=97684094 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1025550230 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1526339299 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1277948759 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=827255411 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1705843113 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=2040868085 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=3402861 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=1594245889 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup5" unique_id=518949380 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
+
+[node name="TreeGroup6" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=1708992226]
+transform = Transform3D(1.9295481e-07, 0, -0.991, 0, 0.991, 0, 0.991, 0, 1.9295481e-07, -16.163528, -1, 632.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1193290544 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1453238284 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1639383081 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=649639794 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639448, 0, -0.5530325, 0, 2.1367526, 0, 0.5530325, 0, -2.0639448, 8.753565, 0, 23.215057)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1838482918 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=888894840 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=420064816 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1005012091 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1692330033 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1927371814 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=667197876 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1574795681 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=703035789 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=99993859 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454395, 0, -1.1232, 0, 2.2464, 0, 1.1232, 0, 1.9454395, -16.11641, -1.4245017, -1.3430328)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup6" unique_id=1635488982 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
+
+[node name="TreeGroup7" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=1481767523]
+transform = Transform3D(-0.8582311, 0, 0.4955001, 0, 0.991, 0, -0.4955001, 0, -0.8582311, -15.163528, -1, 740.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=1455567073 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=700020598 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=1502910913 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=2121359768 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -1.6625061, 0, 33.768494)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=1310354909 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=1456776658 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=383370968 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=438789905 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=530273703 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=1366222598 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=2141869008 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=2135893098 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=877332049 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=2802681 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup7" unique_id=29574456 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
+
+[node name="TreeGroup8" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=1256213250]
+transform = Transform3D(0.25648978, 0, 0.9572325, 0, 0.991, 0, -0.9572325, 0, 0.25648978, 30.836472, -1, 686.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1472284089 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=75069922 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1481906540 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=245462495 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -19.557007, 0, 17.669708)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1862794604 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=977047835 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1834393997 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1684909731 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1013038802 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=1606818862 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=864779222 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=978783664 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=431949187 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=385700413 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup8" unique_id=779843001 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
+
+[node name="TreeGroup9" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=172840308]
+transform = Transform3D(-0.2847008, 0, 1.0625185, 0, 1.1, 0, -1.0625185, 0, -0.2847008, 70.83647, -1, 569.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1825716931 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1508781053 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=900912315 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1033964378 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -19.557007, 0, 17.669708)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1920903465 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1309447794 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1479238701 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=293185539 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=157450300 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=53300832 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1794131683 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1400303719 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=391338878 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=1962823025 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup9" unique_id=859247886 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
+
+[node name="TreeGroup10" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=627190245]
+transform = Transform3D(-0.2847008, 0, 1.0625185, 0, 1.1, 0, -1.0625185, 0, -0.2847008, 98.83647, -1, 658.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1658881809 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=790898288 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1143234338 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=669830848 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.5530324, 0, 2.1367524, 0, 0.5530324, 0, -2.0639446, -19.557007, 0, 17.669708)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=96109253 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1183941740 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=2013135496 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=523337472 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=609748424 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1267447732 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=576175445 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1689010046 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1849043529 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1761962028 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454393, 0, -1.1232002, 0, 2.2464, 0, 1.1232002, 0, 1.9454393, -25.49437, -1.4245017, 3.1831055)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup10" unique_id=1144813300 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.9802322e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -2.9802322e-07, -17.119537, -0.9496677, -18.097565)
+
+[node name="TreeGroup4" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups" unique_id=338817226]
+transform = Transform3D(0.8582311, 0, 0.4955, 0, 0.991, 0, -0.4955, 0, 0.8582311, -88.16353, -1, 763.34973)
+
+[node name="TreeBody" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1904489146 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 20.145493, 0, -14.101852)
+
+[node name="TreeBody12" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=504077864 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.0072749, 0, -1.0072749, 0, 1.4245017, 0, 1.0072749, 0, 1.0072749, 28.875198, 0, -6.0436554)
+
+[node name="TreeBody13" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1171039386 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.5109122, 0, 1.5109124, 0, 2.1367524, 0, -1.5109124, 0, 1.5109122, 22.495789, 0, 8.393951)
+
+[node name="TreeBody14" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1782001479 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-2.0639446, 0, -0.55303246, 0, 2.1367526, 0, 0.55303246, 0, -2.0639446, -24.39804, 0, 12.885834)
+
+[node name="TreeBody15" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=399950084 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-1.0319723, 0, -0.27651623, 0, 1.0683762, 0, 0.27651623, 0, -1.0319723, -3.6933594, 0, 20.481262)
+
+[node name="TreeBody2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=437402137 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.90654737, 0, -0.90654737, 0, 1.2820513, 0, 0.90654737, 0, 0.90654737, 1.3430176, 0, -20.817017)
+
+[node name="TreeBody3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1447558225 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.64102566, 0, 1.110289, 0, 1.2820512, 0, -1.110289, 0, 0.64102566, 6.3793945, 0, -9.736992)
+
+[node name="TreeBody4" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1531780770 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.8333334, 0, 1.4433757, 0, 1.6666665, 0, -1.4433757, 0, 0.8333334, -4.7006226, 0, -6.04364)
+
+[node name="TreeBody5" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1329831360 instance=ExtResource("9_h2aik")]
+
+[node name="TreeBody11" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=2089199221 instance=ExtResource("9_h2aik")]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 12.42305, 0, -21.824295)
+
+[node name="TreeBody6" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=1041746865 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.116394, -1.4245017, -3.3575745)
+
+[node name="TreeBody7" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=19736010 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.7200001, 0, -1.2470765, 0, 1.4399999, 0, 1.2470765, 0, -0.7200001, 7.386673, -1.4245017, 4.7006073)
+
+[node name="TreeBody8" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=395962499 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-0.8640001, 0, -1.4964919, 0, 1.728, 0, 1.4964919, 0, -0.8640001, -6.7151794, -1.4245017, 7.386688)
+
+[node name="TreeBody9" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=2139205842 instance=ExtResource("9_h2aik")]
+transform = Transform3D(1.9454396, 0, -1.1232002, 0, 2.2464004, 0, 1.1232002, 0, 1.9454396, -28.625671, -1.4245018, -8.565247)
+
+[node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TreeGroups/TreeGroup4" unique_id=720108787 instance=ExtResource("9_h2aik")]
+transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
 
 [node name="GrandTree" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1643091550 instance=ExtResource("15_f23eu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 686)
@@ -673,11 +771,11 @@ NodePath("../TortoiseSpawnPoint"): ExtResource("17_26uyv")
 }
 metadata/_custom_type_script = "uid://cgfsmsyun5rwa"
 
-[node name="TortoiseSpawnPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1096047218]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 641.66455)
-
 [node name="JellyfishSpawnPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=89453453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 425.66452)
+
+[node name="TortoiseSpawnPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1096047218]
+transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, 125.799995, -0.099999994, 764.6)
 
 [node name="WaterDripper" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=2142361478 instance=ExtResource("8_s5a7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 15, 462)
@@ -865,6 +963,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.88849, 0, 778.6878)
 
 [node name="StartPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=848666975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 63, 258)
+
+[node name="MultiMushroom" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=209787600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 673)
+multimesh = SubResource("MultiMesh_xrivr")
+script = ExtResource("11_oeat8")
+area_size = Vector2(230, 250)
+
+[node name="MultiBush" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1415182786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20000002, 673)
+multimesh = SubResource("MultiMesh_3ql07")
+script = ExtResource("11_oeat8")
+mushroom_count = 200
+area_size = Vector2(230, 250)
+max_size = 1.8
+
+[node name="TortoiseHut" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=653020535 instance=ExtResource("24_w08tj")]
+transform = Transform3D(-0.08618585, -0.08583165, -0.99257493, -0.022557562, 0.9961947, -0.08418597, 0.9960237, 0.015134437, -0.08779401, 131.7, 0.13371071, 764.6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TortoiseHut" unique_id=174205687]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/TortoiseHut/StaticBody3D" unique_id=1092153080]
+transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 3.7558327, 0)
+shape = SubResource("SphereShape3D_xrivr")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=488215603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 39)
@@ -1068,20 +1189,6 @@ dialogue_ui = NodePath("../../../CanvasLayer/DialogueUI")
 dialogue = ExtResource("14_xw5lg")
 icon_texture = ExtResource("15_0lysu")
 metadata/_custom_type_script = "uid://cpfvcvepkop1s"
-
-[node name="MultiMushroom" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport" unique_id=209787600]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 673)
-multimesh = SubResource("MultiMesh_xrivr")
-script = ExtResource("11_oeat8")
-area_size = Vector2(246, 250)
-
-[node name="MultiBush" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport" unique_id=1415182786]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20000002, 673)
-multimesh = SubResource("MultiMesh_3ql07")
-script = ExtResource("11_oeat8")
-mushroom_count = 200
-area_size = Vector2(246, 250)
-max_size = 1.8
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=534787093]
 
