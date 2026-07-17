@@ -1614,6 +1614,7 @@ transform = Transform3D(0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 
 transform = Transform3D(0.9961947, 0.08715574, 0, -0.085954085, 0.9824598, 0.16548301, 0.014422794, -0.1648533, 0.9862126, -14.200001, -1.5609436, 26.581085)
 
 [node name="StartPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone" unique_id=1365280404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, -127)
 
 [node name="PuddleGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone" unique_id=815149476 node_paths=PackedStringArray("puddles")]
 script = ExtResource("12_spf4h")
