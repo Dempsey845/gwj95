@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var heal_amount: int = 1
+@export var heal_amount: int = 2
 
 @onready var life_timer: Timer = $LifeTimer
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 	)
 
 func _physics_process(delta: float) -> void:
-	velocity.y -= 9 * delta
+	velocity.y -= 4.5 * delta
 	global_position += velocity * delta
 
 func _on_area_entered(area: Area3D) -> void:

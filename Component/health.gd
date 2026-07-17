@@ -25,6 +25,9 @@ func take_damage(damage: int):
 	current_health -= damage
 	damage_taken.emit(damage, current_health)
 
+	check_if_dead()
+
+func check_if_dead():
 	if !dead and current_health <= 0:
 		death.emit()
 		dead = true

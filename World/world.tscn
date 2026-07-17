@@ -35,6 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://cagsaux5y34kx" path="res://NPC/Tortoise/TortoiseHut.fbx" id="24_w08tj"]
 [ext_resource type="PackedScene" uid="uid://dhyf1fx435a25" path="res://Systems/Objective/objective_ui.tscn" id="25_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://mxpgc6tsme2i" path="res://Systems/loading_screen.tscn" id="27_i8dl0"]
+[ext_resource type="Texture2D" uid="uid://ce78148susg10" path="res://Sponge/HeartBack.png" id="36_6gebr"]
+[ext_resource type="Script" uid="uid://7wwithlg2it4" path="res://Sponge/health_bar.gd" id="36_15i7j"]
+[ext_resource type="Texture2D" uid="uid://bi4silooacjln" path="res://Sponge/Heart.png" id="36_or3hn"]
+[ext_resource type="Shader" uid="uid://bpewn5hw3w5ll" path="res://World/fill.gdshader" id="37_6gebr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a836"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -130,6 +134,18 @@ _data = {
 &"RESET": SubResource("Animation_i8dl0"),
 &"start": SubResource("Animation_jf64p")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxuth"]
+resource_local_to_scene = true
+shader = ExtResource("37_6gebr")
+shader_parameter/progress = 1.0
+shader_parameter/fill_color = Color(0.2, 0.6, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrivr"]
+resource_local_to_scene = true
+shader = ExtResource("37_6gebr")
+shader_parameter/progress = 1.0
+shader_parameter/fill_color = Color(1, 0.31412092, 0.28709918, 1)
 
 [node name="World" type="Node3D" unique_id=896112896 node_paths=PackedStringArray("objective_ui", "zones")]
 script = ExtResource("1_eidgh")
@@ -1228,6 +1244,7 @@ player = NodePath("../../../SubViewportContainer/MainViewport/Player")
 [node name="ObjectiveUI" parent="CanvasLayer" unique_id=1606654316 instance=ExtResource("25_dg1ng")]
 
 [node name="TransitionRect" type="ColorRect" parent="CanvasLayer" unique_id=1895587692]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1241,6 +1258,55 @@ libraries/ = SubResource("AnimationLibrary_rw02v")
 autoplay = &"start"
 
 [node name="LoadingScreen" parent="CanvasLayer" unique_id=1345378447 instance=ExtResource("27_i8dl0")]
+visible = false
+
+[node name="HealthBar" type="Control" parent="CanvasLayer" unique_id=2104149523 node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 47.0
+offset_top = 4.0
+offset_right = 87.0
+offset_bottom = 38.0
+script = ExtResource("36_15i7j")
+player = NodePath("../../SubViewportContainer/MainViewport/Player")
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/HealthBar" unique_id=383235171]
+modulate = Color(0.48127687, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_6gebr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SmoothFill" type="TextureRect" parent="CanvasLayer/HealthBar" unique_id=702371592]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_yxuth")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_or3hn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fill" type="TextureRect" parent="CanvasLayer/HealthBar" unique_id=2122887539]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_xrivr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_or3hn")
+expand_mode = 2
+stretch_mode = 5
 
 [editable path="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle"]
 [editable path="SubViewportContainer/MainViewport/WaterPuddles/WaterPuddle6"]

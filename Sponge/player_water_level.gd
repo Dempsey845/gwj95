@@ -2,6 +2,7 @@ class_name WaterLevel
 extends Node
 
 signal water_level_changed(new_water_level: float)
+signal water_damage_taken(amount: int, health_value: int)
 
 @export var health: Health
 
@@ -17,6 +18,8 @@ var max_water_level: float = 500.0
 
 var water_splash_effect_scene:PackedScene = preload("uid://chbrcr8s2cb72")
 @onready var hit_effect_point: Marker3D = $'../HitEffectPoint'
+
+var damage_accumulator: float = 0.0
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -34,3 +37,16 @@ func _ready() -> void:
 		current_water_level = min(current_water_level, max_water_level)
 	)
 
+
+func _process(delta: float) -> void:
+	if current_water_level <= 0:
+		damage_accumulator += 0.25 * delta
+
+		if damage_accumulator >= 1.0:
+			var damage = int(damage_accumulator)
+			health.current_health -= damage
+			health.check_if_dead()
+			damage_accumulator -= damage
+			water_damage_taken.emit(damage, health.current_health)
+	else:
+		damage_accumulator = 0.0

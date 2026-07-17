@@ -1,18 +1,7 @@
 [gd_scene format=3 uid="uid://csme2pndgnevr"]
 
 [ext_resource type="Script" uid="uid://bv52rlndxonhn" path="res://Sponge/Attack/water_projectile.gd" id="1_vgoug"]
-[ext_resource type="Texture2D" uid="uid://dkndl8l6v5x68" path="res://Assets/TinyTexturePack/Elements_15-128x128.png" id="2_tsn7t"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.49803922)
-albedo_texture = ExtResource("2_tsn7t")
-
-[sub_resource type="SphereMesh" id="SphereMesh_7nm3e"]
-material = SubResource("StandardMaterial3D_13qdw")
-radial_segments = 12
-rings = 6
+[ext_resource type="PackedScene" uid="uid://s8tc4ghhuk0i" path="res://Sponge/Heals/water_droplet_visual.tscn" id="2_vgoug"]
 
 [sub_resource type="Animation" id="Animation_aroxj"]
 length = 0.001
@@ -82,10 +71,10 @@ tracks/0/path = NodePath("WaterMesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(7.761022e-08, -9.701268e-09, 1.16415315e-07), Vector3(6.2831855, 0, 0)]
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hi52i"]
@@ -105,10 +94,11 @@ collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_vgoug")
 
-[node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=109588611]
+[node name="WaterMesh" type="Node3D" parent="." unique_id=86583891]
 transform = Transform3D(0.5, -5.8207657e-08, -4.850634e-09, 5.8207657e-08, 0.5, -3.880511e-08, 4.8506386e-09, 3.880511e-08, 0.5, 0.000112086535, 0.0015213831, -4.787417e-05)
-cast_shadow = 0
-mesh = SubResource("SphereMesh_7nm3e")
+
+[node name="WaterDroplet" parent="WaterMesh" unique_id=674349915 instance=ExtResource("2_vgoug")]
+transform = Transform3D(2, -1.9402565e-08, 2.3283063e-07, -2.3283063e-07, -2.426432e-07, 2, -1.9402536e-08, -2, -2.426432e-07, -0.00022416822, -0.0030427247, 0.53538966)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WaterMesh" unique_id=991082503]
 root_node = NodePath("../..")
