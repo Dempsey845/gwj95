@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://q2rvtq4b0j1a" path="res://World/terrain_3d.tscn" id="10_3sd22"]
 [ext_resource type="ArrayMesh" uid="uid://dr503be0adxcx" path="res://World/MushroomMesh.tres" id="10_f23eu"]
 [ext_resource type="Script" uid="uid://byskncpji30tp" path="res://World/multi_mushroom.gd" id="11_oeat8"]
+[ext_resource type="Script" uid="uid://b8pwxcyp865g4" path="res://World/puddle_group.gd" id="12_spf4h"]
 [ext_resource type="Script" uid="uid://cpfvcvepkop1s" path="res://Systems/Dialogue/dialogue_controller.gd" id="13_5xkvv"]
 [ext_resource type="Resource" uid="uid://u65njyf1hq7e" path="res://Systems/Dialogue/Tortoise/tortoise.tres" id="14_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://3supxrftpyy5" path="res://Sponge/Target.png" id="15_0lysu"]
@@ -218,7 +219,7 @@ debug_color = Color(0.9683617, 0, 0.46526784, 1)
 
 [node name="WaterPuddle2" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=644729681 instance=ExtResource("23_rw02v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 490.26453)
-y_offset = 0.8
+y_offset = 0.3
 
 [node name="WaterPuddle3" parent="SubViewportContainer/MainViewport/WaterPuddles" unique_id=1183589173 instance=ExtResource("23_rw02v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.035103, 0.053391814, 468.11)
@@ -239,12 +240,18 @@ navigation_mesh = SubResource("NavigationMesh_xrivr")
 debug_level = 0
 cast_shadows = 0
 
-[node name="ForestZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1281440232 node_paths=PackedStringArray("npc_groups", "enemy_groups", "start_point", "player")]
+[node name="ForestZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1281440232 node_paths=PackedStringArray("npc_groups", "enemy_groups", "puddle_groups", "start_point", "player")]
 script = ExtResource("17_dg1ng")
 npc_groups = [NodePath("NPC_Group")]
 enemy_groups = [NodePath("GrandTree/JellyfishSpawnPoints/JellyFish_EnemyGroup"), NodePath("UrchinPoints/ForestUrchinGroup"), NodePath("ForestCrabs/ForestCrabGroup")]
+puddle_groups = [NodePath("PuddleGroup")]
 start_point = NodePath("StartPoint")
 player = NodePath("../../Player")
+
+[node name="PuddleGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=184012753 node_paths=PackedStringArray("puddles")]
+script = ExtResource("12_spf4h")
+puddles = [NodePath("../../../WaterPuddles/WaterPuddle"), NodePath("../../../WaterPuddles/WaterPuddle2"), NodePath("../../../WaterPuddles/WaterPuddle3"), NodePath("../../../WaterPuddles/WaterPuddle4"), NodePath("../../../WaterPuddles/WaterPuddle5")]
+metadata/_custom_type_script = "uid://b8pwxcyp865g4"
 
 [node name="TreeGroups" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1770278197]
 metadata/_edit_lock_ = true
@@ -838,36 +845,36 @@ metadata/_custom_type_script = "uid://55haqigpp2xb"
 [node name="ForestCrabGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/ForestCrabs" unique_id=309447753 node_paths=PackedStringArray("enemies")]
 script = ExtResource("19_x0pyu")
 enemies = {
-NodePath("../Marker3D30"): ExtResource("19_3ql07"),
-NodePath("../Marker3D29"): ExtResource("19_3ql07"),
-NodePath("../Marker3D28"): ExtResource("19_3ql07"),
-NodePath("../Marker3D27"): ExtResource("19_3ql07"),
-NodePath("../Marker3D26"): ExtResource("19_3ql07"),
-NodePath("../Marker3D25"): ExtResource("19_3ql07"),
-NodePath("../Marker3D24"): ExtResource("19_3ql07"),
-NodePath("../Marker3D23"): ExtResource("19_3ql07"),
-NodePath("../Marker3D22"): ExtResource("19_3ql07"),
-NodePath("../Marker3D21"): ExtResource("19_3ql07"),
-NodePath("../Marker3D20"): ExtResource("19_3ql07"),
-NodePath("../Marker3D19"): ExtResource("19_3ql07"),
-NodePath("../Marker3D18"): ExtResource("19_3ql07"),
-NodePath("../Marker3D17"): ExtResource("19_3ql07"),
-NodePath("../Marker3D16"): ExtResource("19_3ql07"),
-NodePath("../Marker3D15"): ExtResource("19_3ql07"),
-NodePath("../Marker3D14"): ExtResource("19_3ql07"),
-NodePath("../Marker3D13"): ExtResource("19_3ql07"),
-NodePath("../Marker3D12"): ExtResource("19_3ql07"),
-NodePath("../Marker3D11"): ExtResource("19_3ql07"),
-NodePath("../Marker3D10"): ExtResource("19_3ql07"),
-NodePath("../Marker3D9"): ExtResource("19_3ql07"),
-NodePath("../Marker3D8"): ExtResource("19_3ql07"),
-NodePath("../Marker3D7"): ExtResource("19_3ql07"),
-NodePath("../Marker3D6"): ExtResource("19_3ql07"),
-NodePath("../Marker3D5"): ExtResource("19_3ql07"),
-NodePath("../Marker3D4"): ExtResource("19_3ql07"),
-NodePath("../Marker3D3"): ExtResource("19_3ql07"),
+NodePath("../Marker3D"): ExtResource("19_3ql07"),
 NodePath("../Marker3D2"): ExtResource("19_3ql07"),
-NodePath("../Marker3D"): ExtResource("19_3ql07")
+NodePath("../Marker3D3"): ExtResource("19_3ql07"),
+NodePath("../Marker3D4"): ExtResource("19_3ql07"),
+NodePath("../Marker3D5"): ExtResource("19_3ql07"),
+NodePath("../Marker3D6"): ExtResource("19_3ql07"),
+NodePath("../Marker3D7"): ExtResource("19_3ql07"),
+NodePath("../Marker3D8"): ExtResource("19_3ql07"),
+NodePath("../Marker3D9"): ExtResource("19_3ql07"),
+NodePath("../Marker3D10"): ExtResource("19_3ql07"),
+NodePath("../Marker3D11"): ExtResource("19_3ql07"),
+NodePath("../Marker3D12"): ExtResource("19_3ql07"),
+NodePath("../Marker3D13"): ExtResource("19_3ql07"),
+NodePath("../Marker3D14"): ExtResource("19_3ql07"),
+NodePath("../Marker3D15"): ExtResource("19_3ql07"),
+NodePath("../Marker3D16"): ExtResource("19_3ql07"),
+NodePath("../Marker3D17"): ExtResource("19_3ql07"),
+NodePath("../Marker3D18"): ExtResource("19_3ql07"),
+NodePath("../Marker3D19"): ExtResource("19_3ql07"),
+NodePath("../Marker3D20"): ExtResource("19_3ql07"),
+NodePath("../Marker3D21"): ExtResource("19_3ql07"),
+NodePath("../Marker3D22"): ExtResource("19_3ql07"),
+NodePath("../Marker3D23"): ExtResource("19_3ql07"),
+NodePath("../Marker3D24"): ExtResource("19_3ql07"),
+NodePath("../Marker3D25"): ExtResource("19_3ql07"),
+NodePath("../Marker3D26"): ExtResource("19_3ql07"),
+NodePath("../Marker3D27"): ExtResource("19_3ql07"),
+NodePath("../Marker3D28"): ExtResource("19_3ql07"),
+NodePath("../Marker3D29"): ExtResource("19_3ql07"),
+NodePath("../Marker3D30"): ExtResource("19_3ql07")
 }
 metadata/_custom_type_script = "uid://55haqigpp2xb"
 
@@ -1099,10 +1106,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.377415, 54.8, 180.1598)
 size = Vector3(8, 1, 7)
 material = ExtResource("18_s5a7k")
 
-[node name="RockyMountainsZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1967872138 node_paths=PackedStringArray("enemy_groups", "start_point", "player")]
+[node name="RockyMountainsZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1967872138 node_paths=PackedStringArray("enemy_groups", "puddle_groups", "start_point", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 22.8, 137)
 script = ExtResource("17_dg1ng")
 enemy_groups = [NodePath("EnemyGroup"), NodePath("UrchinPoints/UrchinEnemyGroup")]
+puddle_groups = [NodePath("PuddleGroup")]
 start_point = NodePath("StartPoint")
 player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://b4dibo6con0hc"
@@ -1182,6 +1190,11 @@ transform = Transform3D(0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 
 transform = Transform3D(0.9961947, 0.08715574, 0, -0.085954085, 0.9824598, 0.16548301, 0.014422794, -0.1648533, 0.9862126, -14.200001, -1.5609436, 26.581085)
 
 [node name="StartPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone" unique_id=1365280404]
+
+[node name="PuddleGroup" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/RockyMountainsZone" unique_id=815149476 node_paths=PackedStringArray("puddles")]
+script = ExtResource("12_spf4h")
+puddles = [NodePath("../../../WaterPuddles/WaterPuddle6")]
+metadata/_custom_type_script = "uid://b8pwxcyp865g4"
 
 [node name="DialogueController" type="Node" parent="SubViewportContainer/MainViewport" unique_id=867543835 node_paths=PackedStringArray("dialogue_ui")]
 script = ExtResource("13_5xkvv")

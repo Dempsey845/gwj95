@@ -43,8 +43,7 @@ func _process(delta: float) -> void:
 				heal_timer = 0.0
 
 				player_health.heal(health_per_second)
-		else:
-			queue_free.call_deferred()
+		
 
 
 func _on_area_entered(_area: Area3D):
@@ -53,3 +52,8 @@ func _on_area_entered(_area: Area3D):
 func _on_area_exited(_area: Area3D):
 	is_player_in_area = false
 	heal_timer = 0.0
+
+func reset():
+	heal_timer = 0.0
+	is_player_in_area = false
+	global_position.y = start_y

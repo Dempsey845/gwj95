@@ -3,6 +3,7 @@ extends Node3D
 
 @export var npc_groups: Array[NPC_Group]
 @export var enemy_groups: Array[EnemyGroup]
+@export var puddle_groups: Array[PuddleGroup]
 @export var start_point: Marker3D
 
 @export var player: Player
@@ -16,6 +17,9 @@ func spawn_zone():
 
     for enemy_group in enemy_groups:
         enemies = enemy_group.spawn_group(player)
+
+    for puddle in puddle_groups:
+        puddle.reset_puddles()
 
 func destroy_zone():
     for enemy in enemies:
