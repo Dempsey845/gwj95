@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byn16vntqnu6t"]
+
+[ext_resource type="Texture2D" uid="uid://cw6o7e7no4rs8" path="res://Assets/TinyTexturePack/Wood_20-128x128.png" id="1_2jbdw"]
+
+[resource]
+albedo_texture = ExtResource("1_2jbdw")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+texture_filter = 0

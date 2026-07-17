@@ -81,3 +81,6 @@ func attack() -> void:
 	await get_tree().create_timer(attack_cooldown).timeout
 
 	can_attack = true
+
+func add_player(plr: Player):
+	player = plr

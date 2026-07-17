@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://chv46blv6kivx" path="res://Enemy/Crab/crab_visual.tscn" id="2_qik88"]
 
 [node name="CrabEnemy" unique_id=1307595331 instance=ExtResource("1_wbfml")]
+move_speed = 5.0
+chase_distance = 40.0
 
 [node name="CrabVisual" parent="." index="4" unique_id=268855901 node_paths=PackedStringArray("enemy") instance=ExtResource("2_qik88")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.5, 0)
-enemy = NodePath("")
+enemy = NodePath("..")

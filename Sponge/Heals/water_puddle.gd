@@ -3,7 +3,7 @@ extends Area3D
 
 @export var y_offset: float =  0.6
 @export var heal_amount: int = 5
-@export_range(1.0, 5.0, 0.5) var drain_duration: float = 3.0
+@export_range(1.0, 20.0, 0.5) var drain_duration: float = 3.0
 
 var player_health: Health
 

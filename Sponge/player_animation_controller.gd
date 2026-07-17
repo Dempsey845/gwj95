@@ -45,12 +45,11 @@ func _process(delta):
 		current_blend
 	)
 
-	# Jump/Fall blend
-	if not body.is_on_floor():
-		state_machine_playback.travel("jump")
+	if is_sliding_down_slope():
+		state_machine_playback.travel("slide")
 	else:
-		if is_sliding_down_slope():
-			state_machine_playback.travel("slide")
+		if not body.is_on_floor():
+			state_machine_playback.travel("jump")
 		else:
 			if Input.is_action_pressed("crouch"):
 				state_machine_playback.travel("crouch")
@@ -64,7 +63,7 @@ func is_sliding_down_slope() -> bool:
 	var floor_normal = body.get_floor_normal()
 	var floor_angle = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
 
-	const SLIDE_START_ANGLE = 15.0
+	const SLIDE_START_ANGLE = 10.0
 
 	# Get downhill direction
 	var slope_direction = Vector3.DOWN.slide(

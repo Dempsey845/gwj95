@@ -134,7 +134,7 @@ func _physics_process(delta):
 			floor_normal
 		)
 
-		const SLIDE_START_ANGLE = 15.0
+		const SLIDE_START_ANGLE = 10.0
 
 		if floor_angle > SLIDE_START_ANGLE:
 			slope_direction = slope_direction.normalized()
