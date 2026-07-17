@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://dd14unfp5slu1"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_54b43"]
+
+[resource]
+script = ExtResource("1_54b43")
+text = "The path ahead will not be easy."
+speaker = "KING"
+next = 11
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

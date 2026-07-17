@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chrhr7gwl5bv1"
-path.s3tc="res://.godot/imported/Elements_01-128x128.png-e490a1f4b3bb61409cd66f74ee269324.s3tc.ctex"
+uid="uid://be0ac7381hdye"
+path.s3tc="res://.godot/imported/LavaHopperTexture.png-8c9306632c410f9fa1be31b1767b76a0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sponge/Elements_01-128x128.png"
-dest_files=["res://.godot/imported/Elements_01-128x128.png-e490a1f4b3bb61409cd66f74ee269324.s3tc.ctex"]
+source_file="res://Enemy/LavaHopper/LavaHopperTexture.png"
+dest_files=["res://.godot/imported/LavaHopperTexture.png-8c9306632c410f9fa1be31b1767b76a0.s3tc.ctex"]
 
 [params]
 

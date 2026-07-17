@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://b4yelemmt5h61"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_qxhd4"]
+
+[resource]
+script = ExtResource("1_qxhd4")
+text = "It has been taken over."
+speaker = "KING"
+next = 5
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://bwa8kv6u1g183"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_478xc"]
+
+[resource]
+script = ExtResource("1_478xc")
+text = "Without the Grand Well, we will not survive."
+speaker = "KING"
+next = 8
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

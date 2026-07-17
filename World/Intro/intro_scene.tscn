@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://blobugkfrb55l"]
+
+[ext_resource type="PackedScene" uid="uid://b4yyn7ah5o6it" path="res://Systems/Dialogue/dialogue_ui.tscn" id="1_d3a1n"]
+[ext_resource type="Script" uid="uid://bvu4cfwp8xvo2" path="res://World/Intro/intro_scene.gd" id="1_vhpsb"]
+[ext_resource type="Script" uid="uid://bkotugpmyv57m" path="res://Systems/Dialogue/dialogue_manager.gd" id="1_yl174"]
+[ext_resource type="Script" uid="uid://cpfvcvepkop1s" path="res://Systems/Dialogue/dialogue_controller.gd" id="2_05uc8"]
+[ext_resource type="PackedScene" uid="uid://xd12av3f7t21" path="res://Sponge/Model/king_sponge.tscn" id="2_lsns1"]
+[ext_resource type="Resource" uid="uid://b154r0b52hdfx" path="res://Systems/Dialogue/Intro/intro.tres" id="3_qndp8"]
+[ext_resource type="Texture2D" uid="uid://dpum5yg1f4gpx" path="res://Sponge/Model/Body.png" id="4_va2p6"]
+[ext_resource type="Texture2D" uid="uid://8le77vjdxfwk" path="res://Assets/Tile_04-128x128.png" id="7_05uc8"]
+[ext_resource type="Texture2D" uid="uid://bbctvogxw7xi4" path="res://Assets/Tile_16-128x128.png" id="8_qndp8"]
+[ext_resource type="PackedScene" uid="uid://v651w2ns5ne3" path="res://Assets/texture/_coins.fbx" id="9_anpji"]
+[ext_resource type="PackedScene" uid="uid://dx1rtgnwlt60f" path="res://Assets/texture/_jewerly_01.fbx" id="10_vhpsb"]
+[ext_resource type="PackedScene" uid="uid://47byirwwpidw" path="res://Assets/texture/_jewerly_05.fbx" id="11_ge65t"]
+[ext_resource type="PackedScene" uid="uid://bifci4leolq6q" path="res://Assets/texture/_jewerly_06.fbx" id="12_7i0qc"]
+[ext_resource type="PackedScene" uid="uid://dbbjvtrw24b8l" path="res://Assets/texture/_jewerly_04.fbx" id="13_bt7i7"]
+[ext_resource type="PackedScene" uid="uid://c55lc2rt5ad52" path="res://Assets/texture/_jewerly_02.fbx" id="14_j4v3v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_btwiy"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xyon8"]
+sky_material = SubResource("ProceduralSkyMaterial_btwiy")
+
+[sub_resource type="Environment" id="Environment_r76v7"]
+background_mode = 2
+sky = SubResource("Sky_xyon8")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+albedo_texture = ExtResource("7_05uc8")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xrivr"]
+material = SubResource("StandardMaterial3D_13qdw")
+size = Vector2(100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qndp8"]
+material = SubResource("StandardMaterial3D_13qdw")
+size = Vector2(40, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
+albedo_texture = ExtResource("8_qndp8")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_i8dl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_anpji"]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y4tau"]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jf64p"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anpji"]
+_data = {
+&"RESET": SubResource("Animation_i8dl0"),
+&"out": SubResource("Animation_anpji"),
+&"play": SubResource("Animation_y4tau"),
+&"start": SubResource("Animation_jf64p")
+}
+
+[node name="IntroScene" type="Node3D" unique_id=563642428]
+script = ExtResource("1_vhpsb")
+
+[node name="DialogueUI" parent="." unique_id=1916400925 instance=ExtResource("1_d3a1n")]
+z_index = 1
+
+[node name="DialogueManager" type="Node" parent="." unique_id=1879922078]
+script = ExtResource("1_yl174")
+metadata/_custom_type_script = "uid://bkotugpmyv57m"
+
+[node name="DialogueController" type="Node" parent="." unique_id=1144804068 node_paths=PackedStringArray("dialogue_ui")]
+script = ExtResource("2_05uc8")
+dialogue_ui = NodePath("../DialogueUI")
+dialogue = ExtResource("3_qndp8")
+icon_texture = ExtResource("4_va2p6")
+start_on_ready = true
+metadata/_custom_type_script = "uid://cpfvcvepkop1s"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2127501503]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=587745268]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="_coins" parent="SubViewportContainer/SubViewport" unique_id=702401368 instance=ExtResource("9_anpji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="_coins2" parent="SubViewportContainer/SubViewport" unique_id=2121304627 instance=ExtResource("9_anpji")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 3, 0, -1)
+
+[node name="_jewerly_01" parent="SubViewportContainer/SubViewport" unique_id=1116221537 instance=ExtResource("10_vhpsb")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 3, 0, -2)
+
+[node name="_jewerly_05" parent="SubViewportContainer/SubViewport" unique_id=1295956893 instance=ExtResource("11_ge65t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="_jewerly_06" parent="SubViewportContainer/SubViewport" unique_id=1935650927 instance=ExtResource("12_7i0qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="_jewerly_04" parent="SubViewportContainer/SubViewport" unique_id=1069387307 instance=ExtResource("13_bt7i7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="_jewerly_02" parent="SubViewportContainer/SubViewport" unique_id=1597725915 instance=ExtResource("14_j4v3v")]
+transform = Transform3D(-0.9659258, -0.25881913, -1.1313344e-08, 0, -4.371139e-08, 1, -0.25881913, 0.9659258, 4.222196e-08, 2, 0, -1.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=693803284]
+environment = SubResource("Environment_r76v7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1385277041]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=531333464]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 1.6, 3)
+
+[node name="KingSponge" parent="SubViewportContainer/SubViewport" unique_id=1935405943 instance=ExtResource("2_lsns1")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1456279908]
+mesh = SubResource("PlaneMesh_xrivr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=69023600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = SubResource("PlaneMesh_qndp8")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="SubViewportContainer/SubViewport" unique_id=682194450]
+material_override = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=292005154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50000006, 0.45000002, -7.4946337)
+size = Vector3(40, 20, 0.9)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=1692127773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50000006, 0.45000002, 10.505366)
+size = Vector3(40, 20, 0.9)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=2003487098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0.45000002, 1.5053673)
+size = Vector3(1, 20, 17.1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGCombiner3D" unique_id=668240159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.040274, 0.45000002, 1.5053673)
+size = Vector3(1, 20, 17.1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=685485]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)
+light_energy = 2.0
+spot_range = 7.0
+spot_angle = 54.820244
+
+[node name="TransitionRect" type="ColorRect" parent="." unique_id=1206098338]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionRect" unique_id=667230320]
+libraries/ = SubResource("AnimationLibrary_anpji")
+autoplay = &"start"

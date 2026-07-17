@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://b154r0b52hdfx"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_3joyj"]
+[ext_resource type="Script" uid="uid://bxw0dwgveah1w" path="res://Systems/Dialogue/dialogue.gd" id="2_p3jui"]
+[ext_resource type="Resource" uid="uid://qnko7p2pksqn" path="res://Systems/Dialogue/Intro/2-danger.tres" id="3_g0d3y"]
+[ext_resource type="Resource" uid="uid://boc22gk6ylbj2" path="res://Systems/Dialogue/Intro/1-start1.tres" id="3_t00ji"]
+[ext_resource type="Resource" uid="uid://bk0qr4fcunh7x" path="res://Systems/Dialogue/Intro/3-grandwell.tres" id="4_bte57"]
+[ext_resource type="Resource" uid="uid://d4hqnifec0e6h" path="res://Systems/Dialogue/Intro/4-taken.tres" id="5_qcq8w"]
+[ext_resource type="Resource" uid="uid://b4yelemmt5h61" path="res://Systems/Dialogue/Intro/5-takenover.tres" id="6_ekxu5"]
+[ext_resource type="Resource" uid="uid://behur6advgsnp" path="res://Systems/Dialogue/Intro/6-boss.tres" id="7_ycw03"]
+[ext_resource type="Resource" uid="uid://c3waypta683fo" path="res://Systems/Dialogue/Intro/7-dryingout.tres" id="8_7hmng"]
+[ext_resource type="Resource" uid="uid://bwa8kv6u1g183" path="res://Systems/Dialogue/Intro/8-death.tres" id="9_ul5mu"]
+[ext_resource type="Resource" uid="uid://x6py2thxxmp1" path="res://Systems/Dialogue/Intro/9-bravest.tres" id="10_f7bes"]
+[ext_resource type="Resource" uid="uid://u4fwmmnnl0vq" path="res://Systems/Dialogue/Intro/10-takeback.tres" id="11_l4oqq"]
+[ext_resource type="Resource" uid="uid://dd14unfp5slu1" path="res://Systems/Dialogue/Intro/11-noteasy.tres" id="12_f8mt1"]
+[ext_resource type="Resource" uid="uid://dmd8jiamt84b0" path="res://Systems/Dialogue/Intro/12-guards.tres" id="13_5c46x"]
+[ext_resource type="Resource" uid="uid://bdvyylaqx4yyl" path="res://Systems/Dialogue/Intro/13-but.tres" id="14_gound"]
+[ext_resource type="Resource" uid="uid://c5mywf001f4im" path="res://Systems/Dialogue/Intro/14-save.tres" id="15_yhhse"]
+
+[resource]
+script = ExtResource("2_p3jui")
+nodes = Array[ExtResource("1_3joyj")]([ExtResource("3_t00ji"), ExtResource("3_g0d3y"), ExtResource("4_bte57"), ExtResource("5_qcq8w"), ExtResource("6_ekxu5"), ExtResource("7_ycw03"), ExtResource("8_7hmng"), ExtResource("9_ul5mu"), ExtResource("10_f7bes"), ExtResource("11_l4oqq"), ExtResource("12_f8mt1"), ExtResource("13_5c46x"), ExtResource("14_gound"), ExtResource("15_yhhse")])
+metadata/_custom_type_script = "uid://bxw0dwgveah1w"

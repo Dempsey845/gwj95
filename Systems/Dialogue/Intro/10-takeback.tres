@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://u4fwmmnnl0vq"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_eo6sa"]
+
+[resource]
+script = ExtResource("1_eo6sa")
+text = "Take back what was stolen from us."
+speaker = "KING"
+next = 10
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

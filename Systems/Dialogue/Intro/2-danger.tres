@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://qnko7p2pksqn"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_4cdyc"]
+
+[resource]
+script = ExtResource("1_4cdyc")
+text = "I fear our kingdom is in great danger."
+speaker = "KING"
+next = 2
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

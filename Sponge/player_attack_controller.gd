@@ -118,7 +118,7 @@ func try_look_at_nearest_enemy():
 				closest_area = area
 				closest_area_distance_sq = distance_sq_to_area
 		
-		var target_point = closest_area.global_position + Vector3.UP
+		var target_point = closest_area.global_position + (Vector3.UP/1.5)
 
 		if target_billboard.target_node == null:
 			target_billboard.global_position = target_point

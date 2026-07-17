@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://d4hqnifec0e6h"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_d84qy"]
+
+[resource]
+script = ExtResource("1_d84qy")
+text = "the source of all our water..."
+speaker = "KING"
+next = 4
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"

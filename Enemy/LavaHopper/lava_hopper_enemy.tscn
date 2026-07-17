@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c0nbq1dkyi1gl"]
+
+[ext_resource type="PackedScene" uid="uid://c8khf21nsf74x" path="res://Enemy/enemy.tscn" id="1_1yvh7"]
+[ext_resource type="PackedScene" uid="uid://bx08f7ub1ljln" path="res://Enemy/LavaHopper/lava_hopper_visual.tscn" id="2_pvx37"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55h6i"]
+radius = 0.46249998
+height = 0.92499995
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_82nwa"]
+radius = 0.3875
+height = 0.775
+
+[node name="LavaHopperEnemy" unique_id=1307595331 instance=ExtResource("1_1yvh7")]
+move_speed = 2.0
+attack_distance = 0.5
+
+[node name="Hurtbox" parent="." index="2" unique_id=188526900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="CollisionShape3D" parent="Hurtbox" index="0" unique_id=1133840102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09796724, 0)
+shape = SubResource("CapsuleShape3D_55h6i")
+
+[node name="CollisionShape3D" parent="." index="3" unique_id=475035002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43749997, 0)
+shape = SubResource("CapsuleShape3D_82nwa")
+
+[node name="LavaHopperVisual" parent="." index="4" unique_id=2118675799 instance=ExtResource("2_pvx37")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

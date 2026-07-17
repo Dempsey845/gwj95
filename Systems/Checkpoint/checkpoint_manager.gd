@@ -12,8 +12,6 @@ func load_zone():
 	
 	zones = get_tree().current_scene.zones
 
-	print("Loading zone!")
-
 	await get_tree().create_timer(2.0).timeout
 
 	zones[checkpoint_zone].spawn_zone()
@@ -21,6 +19,6 @@ func load_zone():
 func reload_scene():
 	for zone in zones:
 		await zone.destroy_zone()
-
+		
 	load_zone()
 	zones[checkpoint_zone].move_player_to_start()

@@ -364,4 +364,5 @@ func check_wall() -> bool:
 	return false
 
 func reset():
+	ObjectiveManager.instance.jellyfishKilled = 0
 	reset_triggered.emit()

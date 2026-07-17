@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ci8ma20p8y0ac"]
+
+[ext_resource type="PackedScene" uid="uid://cv25at76sfa4q" path="res://World/Gate.fbx" id="1_midl3"]
+[ext_resource type="Script" uid="uid://b7nj4nyvupb80" path="res://World/gate.gd" id="2_vd7bf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1lj4"]
+size = Vector3(6.8, 4.5, 1)
+
+[node name="Gate" type="StaticBody3D" unique_id=868243519]
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1785519526]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999905, 2.25, 0)
+shape = SubResource("BoxShape3D_b1lj4")
+
+[node name="Gate" parent="." unique_id=511108214 instance=ExtResource("1_midl3")]
+script = ExtResource("2_vd7bf")

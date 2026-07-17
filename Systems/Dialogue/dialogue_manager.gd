@@ -3,6 +3,7 @@ extends Node
 
 signal key_given
 signal jellyfish_objective_complete
+signal start_game
 
 static var instance: DialogueManager
 
@@ -53,3 +54,5 @@ func trigger_event(event: String) -> void:
 			tortoise_objective_controller.start_objective()
 		"give_forest_key":
 			key_given.emit()
+		"start_game":
+			start_game.emit()

@@ -23,6 +23,11 @@ func _ready() -> void:
 	fill.material.set_shader_parameter("progress", progress)
 	smooth_fill.material.set_shader_parameter("progress", progress)
 
+	player.reset_triggered.connect(func():
+		fill.material.set_shader_parameter("progress", 1.0)
+		smooth_fill.material.set_shader_parameter("progress", 1.0)
+	)
+
 func _kill_tween() -> void:
 	if tween:
 		tween.kill()

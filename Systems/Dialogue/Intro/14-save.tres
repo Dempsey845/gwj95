@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueNode" format=3 uid="uid://c5mywf001f4im"]
+
+[ext_resource type="Script" uid="uid://bf82wpa51eh6d" path="res://Systems/Dialogue/dialogue_node.gd" id="1_xyaje"]
+
+[resource]
+script = ExtResource("1_xyaje")
+text = "Save the Grand Well!"
+speaker = "KING"
+event = "start_game"
+metadata/_custom_type_script = "uid://bf82wpa51eh6d"
