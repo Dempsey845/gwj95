@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://37qkpel7w3d7" path="res://Systems/Objective/tortoise_objective_checker.gd" id="4_yfuda"]
 [ext_resource type="PackedScene" uid="uid://bva2gmtvlplts" path="res://Enemy/Jellyfish/jellyfish.tscn" id="5_dqu5g"]
 [ext_resource type="Script" uid="uid://mi5ipuwdhf3u" path="res://Sponge/water_level_progress.gd" id="6_bkhv4"]
-[ext_resource type="Terrain3DMaterial" uid="uid://o33dbcybn2fy" path="res://World/Terrain/terrain_3d_material.tres" id="6_dqu5g"]
 [ext_resource type="Script" uid="uid://comm32172yfa5" path="res://World/player_death_manager.gd" id="6_jf64p"]
-[ext_resource type="Terrain3DAssets" uid="uid://d1if8r5xkiivx" path="res://World/Terrain/terrain_3d_assets.tres" id="7_o6lw0"]
+[ext_resource type="PackedScene" uid="uid://ge4t1f38sj73" path="res://Sponge/Heals/water_dripper.tscn" id="8_s5a7k"]
 [ext_resource type="PackedScene" uid="uid://b1dfvhteck6s4" path="res://World/TreeBody.tscn" id="9_h2aik"]
+[ext_resource type="PackedScene" uid="uid://q2rvtq4b0j1a" path="res://World/terrain_3d.tscn" id="10_3sd22"]
 [ext_resource type="ArrayMesh" uid="uid://dr503be0adxcx" path="res://World/MushroomMesh.tres" id="10_f23eu"]
 [ext_resource type="Script" uid="uid://byskncpji30tp" path="res://World/multi_mushroom.gd" id="11_oeat8"]
 [ext_resource type="Script" uid="uid://cpfvcvepkop1s" path="res://Systems/Dialogue/dialogue_controller.gd" id="13_5xkvv"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://b4yyn7ah5o6it" path="res://Systems/Dialogue/dialogue_ui.tscn" id="17_kcyjf"]
 [ext_resource type="Script" uid="uid://cgfsmsyun5rwa" path="res://NPC/npc_group.gd" id="18_dqu5g"]
 [ext_resource type="Script" uid="uid://55haqigpp2xb" path="res://Enemy/enemy_group.gd" id="19_x0pyu"]
+[ext_resource type="PackedScene" uid="uid://d23g0vt3rg3nv" path="res://Sponge/Heals/water_puddle.tscn" id="23_rw02v"]
+[ext_resource type="PackedScene" uid="uid://vv4hsig1a753" path="res://Enemy/Urchin/urchin.tscn" id="24_3sd22"]
 [ext_resource type="PackedScene" uid="uid://dhyf1fx435a25" path="res://Systems/Objective/objective_ui.tscn" id="25_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://mxpgc6tsme2i" path="res://Systems/loading_screen.tscn" id="27_i8dl0"]
 
@@ -157,7 +159,7 @@ shadow_enabled = true
 environment = SubResource("Environment_3f78f")
 
 [node name="Player" parent="SubViewportContainer/MainViewport" unique_id=1437856355 instance=ExtResource("1_62w18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 633.5645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 393.5645)
 top_level = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/MainViewport" unique_id=1261396565]
@@ -544,12 +546,8 @@ transform = Transform3D(1.9454396, 0, -1.1232002, 0, 2.2464004, 0, 1.1232002, 0,
 [node name="TreeBody10" parent="SubViewportContainer/MainViewport/NavigationRegion3D/TreeGroups/TreeGroup4" unique_id=720108787 instance=ExtResource("9_h2aik")]
 transform = Transform3D(-3.5762787e-07, 0, -2.02176, 0, 2.0217602, 0, 2.02176, 0, -3.5762787e-07, -8.393967, -0.94966775, -19.13823)
 
-[node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=142476815]
-data_directory = "res://World/Terrain"
-material = ExtResource("6_dqu5g")
-assets = ExtResource("7_o6lw0")
-top_level = true
-metadata/_edit_lock_ = true
+[node name="Terrain3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=727893777 instance=ExtResource("10_3sd22")]
+cast_shadows = 0
 
 [node name="ForestZone" type="Node3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D" unique_id=1281440232 node_paths=PackedStringArray("npc_groups", "enemy_groups", "player")]
 script = ExtResource("17_dg1ng")
@@ -595,6 +593,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -11)
 [node name="Marker3D5" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/GrandTree/JellyfishSpawnPoints" unique_id=1824673103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 10)
 
+[node name="WaterDripper" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone/GrandTree" unique_id=648188010 instance=ExtResource("8_s5a7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+drop_area = Vector3(15, 1, 15)
+
 [node name="NPC_Group" type="Node" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1602295310 node_paths=PackedStringArray("npcs")]
 script = ExtResource("18_dqu5g")
 npcs = {
@@ -608,6 +610,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 641.66455)
 [node name="JellyfishSpawnPoint" type="Marker3D" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=89453453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 425.66452)
 
+[node name="WaterDripper" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=2142361478 instance=ExtResource("8_s5a7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 15, 462)
+drop_area = Vector3(5, 1, 5)
+drop_rate = 2.0
+
+[node name="WaterDripper2" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1959380702 instance=ExtResource("8_s5a7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 20, 560)
+drop_area = Vector3(5, 1, 5)
+drop_rate = 2.0
+
+[node name="WaterDripper3" parent="SubViewportContainer/MainViewport/NavigationRegion3D/ForestZone" unique_id=1342055536 instance=ExtResource("8_s5a7k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 15, 668.4)
+drop_area = Vector3(5, 1, 5)
+drop_rate = 2.0
+
 [node name="MultiMushroom" type="MultiMeshInstance3D" parent="SubViewportContainer/MainViewport" unique_id=209787600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 604)
 multimesh = SubResource("MultiMesh_xrivr")
@@ -620,6 +637,31 @@ dialogue_ui = NodePath("../../../CanvasLayer/DialogueUI")
 dialogue = ExtResource("14_xw5lg")
 icon_texture = ExtResource("15_0lysu")
 metadata/_custom_type_script = "uid://cpfvcvepkop1s"
+
+[node name="Urchin2" parent="SubViewportContainer/MainViewport" unique_id=1632820619 instance=ExtResource("24_3sd22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, -0.8, 404.0645)
+
+[node name="WaterPuddle" parent="SubViewportContainer/MainViewport" unique_id=1617648974 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 403.5645)
+
+[node name="WaterPuddle2" parent="SubViewportContainer/MainViewport" unique_id=644729681 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 490.26453)
+y_offset = 0.8
+
+[node name="WaterPuddle3" parent="SubViewportContainer/MainViewport" unique_id=1183589173 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.035103, 0.053391814, 468.11)
+y_offset = 0.4
+
+[node name="WaterPuddle4" parent="SubViewportContainer/MainViewport" unique_id=1659048404 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.222693, -0.063479364, 595.11)
+y_offset = 0.7
+
+[node name="Urchin" parent="SubViewportContainer/MainViewport" unique_id=1404431289 instance=ExtResource("24_3sd22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.036815, -0.8272341, 761.0566)
+
+[node name="WaterPuddle5" parent="SubViewportContainer/MainViewport" unique_id=232270177 instance=ExtResource("23_rw02v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.036815, -0.027234137, 761.0566)
+y_offset = 0.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=534787093]
 

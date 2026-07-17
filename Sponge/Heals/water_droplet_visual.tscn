@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://s8tc4ghhuk0i"]
+
+[ext_resource type="PackedScene" uid="uid://c8tr6dsguh6po" path="res://Sponge/Heals/WaterDroplet.fbx" id="1_vbfb0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lh27"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0.69411767, 1, 0.6039216)
+
+[node name="WaterDroplet" unique_id=674349915 instance=ExtResource("1_vbfb0")]
+
+[node name="Droplet" parent="." index="0" unique_id=164487854]
+material_override = SubResource("StandardMaterial3D_6lh27")

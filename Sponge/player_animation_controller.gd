@@ -62,6 +62,9 @@ func is_sliding_down_slope() -> bool:
 		return false
 
 	var floor_normal = body.get_floor_normal()
+	var floor_angle = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
+
+	const SLIDE_START_ANGLE = 15.0
 
 	# Get downhill direction
 	var slope_direction = Vector3.DOWN.slide(
@@ -69,7 +72,7 @@ func is_sliding_down_slope() -> bool:
 	).normalized()
 
 	# No slope
-	if slope_direction.length() < 0.01:
+	if floor_angle < SLIDE_START_ANGLE:
 		return false
 
 	# Current horizontal movement

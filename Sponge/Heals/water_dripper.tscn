@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ge4t1f38sj73"]
+
+[ext_resource type="Script" uid="uid://behcutroftr8u" path="res://Sponge/Heals/water_dripper.gd" id="1_6lh27"]
+
+[node name="WaterDripper" type="Node3D" unique_id=648188010]
+script = ExtResource("1_6lh27")
+
+[node name="Timer" type="Timer" parent="." unique_id=1470762846]
+autostart = true

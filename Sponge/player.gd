@@ -127,13 +127,16 @@ func _physics_process(delta):
 
 	if is_on_floor():
 		var floor_normal = get_floor_normal()
+		var floor_angle = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
 
 		# Slope force
 		var slope_direction = Vector3.DOWN.slide(
 			floor_normal
 		)
 
-		if slope_direction.length() > 0.01:
+		const SLIDE_START_ANGLE = 15.0
+
+		if floor_angle > SLIDE_START_ANGLE:
 			slope_direction = slope_direction.normalized()
 
 			horizontal_velocity += (
@@ -150,7 +153,7 @@ func _physics_process(delta):
 				delta
 			)
 		else:
-			if slope_direction.length() > 0.01:
+			if floor_angle > SLIDE_START_ANGLE:
 				horizontal_velocity = horizontal_velocity.move_toward(
 					Vector3.ZERO,
 					slope_friction * delta

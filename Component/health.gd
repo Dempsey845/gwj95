@@ -8,6 +8,8 @@ signal death
 
 @export var max_health: int = 3
 
+var dead: bool
+
 var _current_health: int = 1
 var current_health: int:
 	get():
@@ -23,9 +25,11 @@ func take_damage(damage: int):
 	current_health -= damage
 	damage_taken.emit(damage, current_health)
 
-	if current_health <= 0:
+	if !dead and current_health <= 0:
 		death.emit()
+		dead = true
 
 func heal(amount: int):
 	current_health += amount
+	current_health = min(current_health, max_health)
 	healed.emit(amount, current_health)

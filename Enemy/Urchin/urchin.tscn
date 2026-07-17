@@ -10,7 +10,7 @@
 radius = 0.3943904
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_13qdw"]
-radius = 2.517505
+radius = 4.0
 
 [node name="Urchin" type="Area3D" unique_id=1632820619 node_paths=PackedStringArray("health")]
 collision_layer = 16

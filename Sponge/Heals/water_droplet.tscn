@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0op4qyj5allw"]
+
+[ext_resource type="Script" uid="uid://cglt63jfmfr0b" path="res://Sponge/Heals/water_droplet.gd" id="1_gvnho"]
+[ext_resource type="PackedScene" uid="uid://s8tc4ghhuk0i" path="res://Sponge/Heals/water_droplet_visual.tscn" id="2_gvnho"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 0.4
+
+[node name="WaterDroplet" type="Area3D" unique_id=2143325988]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_gvnho")
+
+[node name="WaterDroplet" parent="." unique_id=674349915 instance=ExtResource("2_gvnho")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1884100235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=129256323]
+wait_time = 3.0
+one_shot = true
+autostart = true

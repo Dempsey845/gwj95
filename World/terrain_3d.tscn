@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://q2rvtq4b0j1a"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://o33dbcybn2fy" path="res://World/Terrain/terrain_3d_material.tres" id="1_rqa3h"]
+[ext_resource type="Terrain3DAssets" uid="uid://d1if8r5xkiivx" path="res://World/Terrain/terrain_3d_assets.tres" id="2_3ya25"]
+
+[node name="Terrain3D" type="Terrain3D" unique_id=727893777]
+debug_level = 3
+data_directory = "res://World/Terrain"
+material = ExtResource("1_rqa3h")
+assets = ExtResource("2_3ya25")
+collision_layer = 3
+top_level = true
+metadata/_edit_lock_ = true

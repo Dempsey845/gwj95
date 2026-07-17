@@ -5,7 +5,7 @@ signal water_level_changed(new_water_level: float)
 
 @export var health: Health
 
-var _current_water_level: float = 500.0
+var _current_water_level: float = 250.0
 var current_water_level: float:
 	get():
 		return _current_water_level
@@ -31,4 +31,6 @@ func _ready() -> void:
 
 	health.healed.connect(func(amount: int, _health_value: int):
 		current_water_level += amount * (max_water_level / health.max_health)
+		current_water_level = min(current_water_level, max_water_level)
 	)
+
